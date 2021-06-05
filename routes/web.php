@@ -14,3 +14,5 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', 'App\Http\Controllers\HomeController@home');
+
+Route::get('/layanan', 'App\Http\Controllers\LayananController@layanan');

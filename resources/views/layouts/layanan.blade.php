@@ -26,15 +26,10 @@
   <div class="container">
 
     <div class="row">
-    <H3>TEST</H3>
-      <div class="col-xl-5 col-lg-6 d-flex justify-content-center video-box align-items-stretch">
-        
-        <a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="venobox play-btn mb-4" data-vbtype="video" data-autoplay="true"></a>
-      </div>
-
+      
       <div class="col-xl-7 col-lg-6 icon-boxes d-flex flex-column align-items-stretch justify-content-center py-5 px-lg-5">
-        <h3>LAYANAN</h3>
-        <p>Esse voluptas cumque vel exercitationem. Reiciendis est hic accusamus. Non ipsam et sed minima temporibus laudantium. Soluta voluptate sed facere corporis dolores excepturi. Libero laboriosam sint et id nulla tenetur. Suscipit aut voluptate.</p>
+        <h3>INFORMASI SAMPAH</h3>
+        <p>Pilih Jenis Sampah yang akan dijual.</p>
 
         <div class="icon-box">
           <div class="icon"><i class="bx bx-fingerprint"></i></div>
