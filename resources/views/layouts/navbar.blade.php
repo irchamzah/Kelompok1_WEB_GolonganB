@@ -8,8 +8,8 @@
 
       <nav class="nav-menu d-none d-lg-block">
         <ul>
-          <li class="active"><a href="index.html">Home</a></li>
-          <li><a href="#about">Layanan</a></li>
+          <li><a href="/">Home</a></li>
+          <li><a href="/layanan">Layanan</a></li>
           <li><a href="#">Status Pesanan</a></li>
           <li><a href="#services">Kreasi</a></li>
           <li><a href="#">Notifikasi</a></li>
