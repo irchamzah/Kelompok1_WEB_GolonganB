@@ -371,7 +371,7 @@
 <!-- End Portfolio Section -->
 
 <!-- ======= Testimonials Section ======= -->
-<section id="testimonials" class="testimonials">
+<section id="testimonials" class="">
   <div class="container">
 
     <div class="owl-carousel testimonials-carousel">
@@ -625,7 +625,7 @@
 <!-- End Gallery Section -->
 
 <!-- ======= Contact Section ======= -->
-<section id="contact" class="contact">
+<!-- <section id="contact" class="contact">
   <div class="container">
 
     <div class="section-title">
@@ -697,7 +697,7 @@
     </div>
 
   </div>
-</section><!-- End Contact Section -->
+</section>End Contact Section -->
 
 </main><!-- End #main -->
 
