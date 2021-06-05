@@ -452,7 +452,7 @@
         <div class="member">
           <div class="member-img">
             <img src="frontend/assets/img/team/team-1.jpg" class="img-fluid" alt="">
-            <div class="social">
+            <div class="social">    
               <a href=""><i class="icofont-twitter"></i></a>
               <a href=""><i class="icofont-facebook"></i></a>
               <a href=""><i class="icofont-instagram"></i></a>
@@ -544,7 +544,7 @@
 </section><!-- End Team Section -->
 
 <!-- ======= Gallery Section ======= -->
-<section id="gallery" class="gallery">
+<!-- <section id="gallery" class="gallery">
   <div class="container">
 
     <div class="section-title">
@@ -621,7 +621,8 @@
     </div>
 
   </div>
-</section><!-- End Gallery Section -->
+</section> -->
+<!-- End Gallery Section -->
 
 <!-- ======= Contact Section ======= -->
 <section id="contact" class="contact">
@@ -633,7 +634,7 @@
     </div>
 
     <div>
-      <iframe style="border:0; width: 100%; height: 270px;" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621" frameborder="0" allowfullscreen></iframe>
+      <iframe style="border:0; width: 100%; height: 270px;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3949.4288262130435!2d113.72027101460095!3d-8.15947709412692!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd695b617d8f623%3A0xf6c4437632474338!2sPoliteknik%20Negeri%20Jember!5e0!3m2!1sid!2sid!4v1622891937419!5m2!1sid!2sid" frameborder="0" allowfullscreen></iframe>
     </div>
 
     <div class="row mt-5">
