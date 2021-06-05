@@ -460,7 +460,7 @@
             </div>
           </div>
           <div class="member-info">
-            <h4>Walter White</h4>
+            <h4>irchamzah Fikri Ababil</h4>
             <span>Chief Executive Officer</span>
           </div>
         </div>
@@ -478,7 +478,7 @@
             </div>
           </div>
           <div class="member-info">
-            <h4>Sarah Jhonson</h4>
+            <h4>Suroto Edy Nur</h4>
             <span>Product Manager</span>
           </div>
         </div>
@@ -496,7 +496,7 @@
             </div>
           </div>
           <div class="member-info">
-            <h4>William Anderson</h4>
+            <h4>Shenila Letishya Ramona</h4>
             <span>CTO</span>
           </div>
         </div>
@@ -514,7 +514,25 @@
             </div>
           </div>
           <div class="member-info">
-            <h4>Amanda Jepson</h4>
+            <h4>Dwi Prasetiyo Utomo</h4>
+            <span>Accountant</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+        <div class="member">
+          <div class="member-img">
+            <img src="frontend/assets/img/team/team-5.jpg" class="img-fluid" alt="">
+            <div class="social">
+              <a href=""><i class="icofont-twitter"></i></a>
+              <a href=""><i class="icofont-facebook"></i></a>
+              <a href=""><i class="icofont-instagram"></i></a>
+              <a href=""><i class="icofont-linkedin"></i></a>
+            </div>
+          </div>
+          <div class="member-info">
+            <h4>Muhammad Afdal Zikri</h4>
             <span>Accountant</span>
           </div>
         </div>
