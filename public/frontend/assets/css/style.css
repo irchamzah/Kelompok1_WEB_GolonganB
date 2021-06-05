@@ -1518,6 +1518,7 @@ section {
 #footer .copyright {
   float: left;
   color: #0f394c;
+  
 }
 
 #footer .credits {
@@ -1535,6 +1536,7 @@ section {
   #footer .copyright, #footer .credits {
     float: none;
     text-align: center;
+    background: #299E63;
   }
 
 

@@ -32,7 +32,7 @@
         <p>Pilih Jenis Sampah yang akan dijual.</p>
 
         <div class="icon-box">
-          
+          <div class="icon"><i class="bx bx-fingerprint"></i></div>
           <h4 class="title"><a href="">Lorem Ipsum</a></h4>
           <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
         </div>
@@ -55,7 +55,7 @@
   </div>
 </section><!-- End About Section -->
 
-
+  
 
 </main>
 <!-- End #main -->
