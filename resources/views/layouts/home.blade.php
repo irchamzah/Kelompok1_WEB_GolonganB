@@ -217,7 +217,7 @@
 </section><!-- End Services Section -->
 
 <!-- ======= Portfolio Section ======= -->
-<section id="portfolio" class="portfolio">
+<!-- <section id="portfolio" class="portfolio">
   <div class="container">
 
     <div class="section-title">
@@ -366,8 +366,9 @@
 
     </div>
 
-  </div>
-</section><!-- End Portfolio Section -->
+  </div> 
+</section>-->
+<!-- End Portfolio Section -->
 
 <!-- ======= Testimonials Section ======= -->
 <section id="testimonials" class="testimonials">
@@ -433,7 +434,8 @@
     </div>
 
   </div>
-</section><!-- End Testimonials Section -->
+</section>
+<!-- End Testimonials Section -->
 
 <!-- ======= Team Section ======= -->
 <section id="team" class="team section-bg">
