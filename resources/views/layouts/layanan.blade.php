@@ -31,27 +31,67 @@
         <h3>INFORMASI SAMPAH</h3>
         <p>Pilih Jenis Sampah yang akan dijual.</p>
 
-        <div class="icon-box">
-          <div class="icon"><i class="bx bx-fingerprint"></i></div>
-          <h4 class="title"><a href="">Lorem Ipsum</a></h4>
-          <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
-        </div>
+        <ul class="list-group">
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            Kertas
+            <span class="badge badge-primary badge-pill">Pilih</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            Kardus
+            <span class="badge badge-primary badge-pill">Pilih</span>
+          </li>
+        </ul><br>
 
-        <div class="icon-box">
-          <div class="icon"><i class="bx bx-gift"></i></div>
-          <h4 class="title"><a href="">Nemo Enim</a></h4>
-          <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque</p>
-        </div>
+        <table class="table">
+                <thead class="table-dark">
+                    <tr>
+                        <th scope="col">No</th>
+                        <th scope="col">Jenis Sampah yang Dipilih</th>
+                        <th scope="col">Foto Sampah</th>
+                        <th scope="col">Aksi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Kertas</td>
+                        <td>ehe.jpg</td>
+                        <td >
+                            <a href="" class="badge bg-primary">edit</a>
+                            <a href="" class="badge bg-danger">delete</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table><br><br>
 
-        <div class="icon-box">
-          <div class="icon"><i class="bx bx-atom"></i></div>
-          <h4 class="title"><a href="">Dine Pad</a></h4>
-          <p class="description">Explicabo est voluptatum asperiores consequatur magnam. Et veritatis odit. Sunt aut deserunt minus aut eligendi omnis</p>
-        </div>
+            <h3>INFORMASI PENJEMPUTAN</h3>
+            <p>Isi dengan benar, agar tidak terjadi kesalahan.</p><br>
+
+            <form action="/action_page.php">
+              <div class="form-group">
+                <label for="email">Nama Penanggung Jawab</label>
+                <input type="email" class="form-control" id="email" placeholder="Isi nama Penanggung Jawab" name="email">
+              </div>
+              <div class="form-group">
+                <label for="email">Alamat</label>
+                <input type="email" class="form-control" id="email" placeholder="Isi Alamat Rumah" name="email">
+              </div>
+              <div class="form-group">
+                <label for="pwd">Nomor Telepon</label>
+                <input type="password" class="form-control" id="pwd" placeholder="Isi Nomor Telepon yang Bisa Dihubungi" name="pswd">
+              </div>
+              <div class="form-group form-check">
+              </div>
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+
+
 
       </div>
-    </div>
 
+
+
+    </div>
   </div>
 </section><!-- End About Section -->
 
