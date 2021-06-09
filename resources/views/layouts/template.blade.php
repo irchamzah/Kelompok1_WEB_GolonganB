@@ -63,7 +63,7 @@
         <div class="row">
 
           <div class="col-lg-3 col-md-6 footer-contact">
-            <h3>SIPAPA</h3>
+            <h3>SIPAPAH</h3>
             <p>
             Jl. Mastrip No.164,     <br>
             Krajan Timur, Sumbersari,<br>

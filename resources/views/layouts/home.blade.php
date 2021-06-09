@@ -7,12 +7,13 @@
 <div class="container">
   <div class="row">
     <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center">
-      <h1>SIPAPA Creating websites that make you stop & stare</h1>
-      <h2>Accusantium quam, aliquam ultricies eget tempor id, aliquam eget nibh et. Maecen aliquam, risus at semper. Proin iaculis purus consequat sem cure digni ssim. Donec porttitora entum.</h2>
+      <h1>SISTEM INFORMASI PENGOLAH SAMPAH (SIPAPAH)</h1>
+      <h2>Sipapah adalah aplikasi pengolah sampah kertas untuk semua kalangan yang hidup dengan tumpukan kertas. Kita harus peduli terhadap kelestarian alam untuk tidak membuang kertas bekas sembarangan. Meskipun harga kertas bekas tidak seberapa, menjual kertas bekas berarti turut menjaga kelestarian lingkungan. Cinta Alam bersama SIPAPAH.
+      </h2>
       <div><a href="#about" class="btn-get-started scrollto">Get Started</a></div>
     </div>
-    <div class="col-lg-6 order-1 order-lg-2 hero-img">
-      <img src="frontend/assets/img/hero-img.png" class="img-fluid" alt="">
+    <div class="col-lg-3 order-3 order-lg-2 daurulang">
+      <img src="frontend/assets/img/daurulang.png" class="img-fluid" alt="">
     </div>
   </div>
 </div>
@@ -34,7 +35,7 @@
 
       <div class="col-xl-7 col-lg-6 icon-boxes d-flex flex-column align-items-stretch justify-content-center py-5 px-lg-5">
         <h3>LAYANAN</h3>
-        <p>Esse voluptas cumque vel exercitationem. Reiciendis est hic accusamus. Non ipsam et sed minima temporibus laudantium. Soluta voluptate sed facere corporis dolores excepturi. Libero laboriosam sint et id nulla tenetur. Suscipit aut voluptate.</p>
+        <p></p>
 
         <div class="icon-box">
           <div class="icon"><i class="bx bx-fingerprint"></i></div>

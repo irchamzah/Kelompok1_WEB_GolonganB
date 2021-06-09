@@ -2,7 +2,7 @@
 <header id="header" class="fixed-top">
     <div class="container d-flex align-items-center">
 
-      <a href="/" class="logo mr-auto">SIPAPA</a>
+      <a href="/" class="logo mr-auto">SIPAPAH</a>
       <!-- Uncomment below if you prefer to use text as a logo -->
       <!-- <h1 class="logo mr-auto"><a href="index.html">Butterfly</a></h1> -->
 
