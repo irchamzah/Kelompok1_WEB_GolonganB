@@ -22,6 +22,10 @@ Route::get('/layanan', 'App\Http\Controllers\LayananController@layanan');
 
 Route::get('/status_pesanan', 'App\Http\Controllers\StatusPesananController@status_pesanan');
 
+Route::get('/kreasi', 'App\Http\Controllers\KreasiController@kreasi');
+
+Route::get('/notifikasi', 'App\Http\Controllers\NotifikasiController@notifikasi');
+
 
 // Route::get('/login', function() {
 //     return view('/layouts/login');
