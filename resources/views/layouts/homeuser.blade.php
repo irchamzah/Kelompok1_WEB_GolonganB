@@ -99,7 +99,7 @@
 
 
 <!-- ======= Testimonials Section ======= -->
-<section id="testimonials" class="">
+<!-- <section id="testimonials" class="">
   <div class="container">
 
     <div class="owl-carousel testimonials-carousel">
@@ -162,7 +162,7 @@
     </div>
 
   </div>
-</section>
+</section> -->
 <!-- End Testimonials Section -->
 
 </main><!-- End #main -->

@@ -42,6 +42,8 @@
           </li>
         </ul><br>
 
+        
+
         <table class="table">
                 <thead class="table-dark">
                     <tr>
@@ -62,7 +64,25 @@
                         </td>
                     </tr>
                 </tbody>
-            </table><br><br>
+          </table><br><br>
+            
+            
+
+
+
+      </div>
+
+
+
+    </div>
+  </div>
+</section><!-- End About Section -->
+
+<section id="hero" class="d-flex align-items-center">
+
+              <div class="container">
+                  <div class="row">
+                  <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center">
 
             <h3>INFORMASI PENJEMPUTAN</h3>
             <p>Isi dengan benar, agar tidak terjadi kesalahan.</p><br>
@@ -84,18 +104,11 @@
               </div>
               <button type="submit" class="btn btn-primary">Submit</button>
             </form>
+            </div> 
+            </div> 
+            </div> 
+            </section> 
 
-
-
-      </div>
-
-
-
-    </div>
-  </div>
-</section><!-- End About Section -->
-
-  
 
 </main>
 <!-- End #main -->
