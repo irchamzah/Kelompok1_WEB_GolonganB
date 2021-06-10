@@ -22,25 +22,18 @@
 <main id="main">
 
 <!-- ======= About Section ======= -->
-<section id="about" class="about">
-  <div class="container">
-
-    <div class="row">
-      
-      <div class="col-xl-7 col-lg-6 icon-boxes d-flex flex-column align-items-stretch justify-content-center py-5 px-lg-5">
-        <h3>INFORMASI SAMPAH</h3>
-        <p>Pilih Jenis Sampah yang akan dijual.</p>
-
-        <ul class="list-group">
-          <li class="list-group-item d-flex justify-content-between align-items-center">
-            Kertas
-            <span class="badge badge-primary badge-pill">Pilih</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center">
-            Kardus
-            <span class="badge badge-primary badge-pill">Pilih</span>
-          </li>
-        </ul><br>
+<section id="layanan" class="layanan">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-7 col-lg-6 icon-boxes d-flex flex-column align-items-stretch justify-content-center py-5 px-lg-5">
+                <h3>INFORMASI SAMPAH</h3>
+                <p>Pilih Jenis Sampah yang akan dijual.</p>
+                <ul class="list-group">
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+            Kertas <span class="badge badge-primary badge-pill">Pilih</span> </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+            Kardus <span class="badge badge-primary badge-pill">Pilih</span></li>
+                </ul><br>
 
         <table class="table">
                 <thead class="table-dark">
@@ -73,8 +66,8 @@
                 <input type="email" class="form-control" id="email" placeholder="Isi nama Penanggung Jawab" name="email">
               </div>
               <div class="form-group">
-                <label for="email">Alamat</label>
-                <input type="email" class="form-control" id="email" placeholder="Isi Alamat Rumah" name="email">
+                <label for="alamat">Alamat</label>
+                <input type="alamat" class="form-control" id="alamat" placeholder="Isi Alamat Rumah" name="alamat">
               </div>
               <div class="form-group">
                 <label for="pwd">Nomor Telepon</label>
@@ -95,7 +88,7 @@
   </div>
 </section><!-- End About Section -->
 
-  
+
 
 </main>
 <!-- End #main -->

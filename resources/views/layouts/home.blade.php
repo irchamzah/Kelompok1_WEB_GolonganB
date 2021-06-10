@@ -5,17 +5,17 @@
 <section id="hero" class="d-flex align-items-center">
 
 <div class="container">
-  <div class="row">
+    <div class="row">
     <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center">
-      <h1>SISTEM INFORMASI PENGOLAH SAMPAH (SIPAPAH)</h1>
-      <h2>Sipapah adalah aplikasi pengolah sampah kertas untuk semua kalangan yang hidup dengan tumpukan kertas. Kita harus peduli terhadap kelestarian alam untuk tidak membuang kertas bekas sembarangan. Meskipun harga kertas bekas tidak seberapa, menjual kertas bekas berarti turut menjaga kelestarian lingkungan. Cinta Alam bersama SIPAPAH.
-      </h2>
-      <div><a href="#about" class="btn-get-started scrollto">Get Started</a></div>
+        <h1>SISTEM INFORMASI PENGOLAH SAMPAH (SIPAPAH)</h1>
+        <h2>Sipapah adalah aplikasi pengolah sampah kertas untuk semua kalangan yang hidup dengan tumpukan kertas. Kita harus peduli terhadap kelestarian alam untuk tidak membuang kertas bekas sembarangan. Meskipun harga kertas bekas tidak seberapa, menjual kertas bekas berarti turut menjaga kelestarian lingkungan. Cinta Alam bersama SIPAPAH.
+        </h2>
+        <div><a href="#about" class="btn-get-started scrollto">Get Started</a></div>
     </div>
     <div class="col-lg-3 order-3 order-lg-2 daurulang">
-      <img src="frontend/assets/img/daurulang.png" class="img-fluid" alt="">
+        <img src="frontend/assets/img/daurulang.png" class="img-fluid" alt="">
     </div>
-  </div>
+    </div>
 </div>
 
 </section><!-- End Hero -->
@@ -24,41 +24,18 @@
 
 <!-- ======= About Section ======= -->
 <section id="about" class="about">
-  <div class="container">
-
-    <div class="row">
-    <H3>TEST</H3>
-      <div class="col-xl-5 col-lg-6 d-flex justify-content-center video-box align-items-stretch">
-        
-        <a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="venobox play-btn mb-4" data-vbtype="video" data-autoplay="true"></a>
-      </div>
-
-      <div class="col-xl-7 col-lg-6 icon-boxes d-flex flex-column align-items-stretch justify-content-center py-5 px-lg-5">
-        <h3>LAYANAN</h3>
-        <p></p>
-
-        <div class="icon-box">
-          <div class="icon"><i class="bx bx-fingerprint"></i></div>
-          <h4 class="title"><a href="/layanan">Klik ini utk ke halaman layanan</a></h4>
-          <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
+    <div class="container-fluid">
+        <h1>Layanan</h1>
+        <div class="row">
+            <div class="col-sm-3 col-md-6 col-lg-4 pickup">
+                <img src="frontend/assets/img/kardus.png" alt="" class="img-fluid">
+            </div>
+            <div class="col-sm-9 col-md-6 col-lg-8 pick-up">
+            <h1>PickUp</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis asperiores quibusdam quos quo rem laborum, excepturi minima ad iste ipsam facere quasi reprehenderit aliquid reiciendis similique, adipisci tempora provident placeat!<span> <a href="#" class="layanan"></a> selengkapnya ..... </span></p>
+            </div>
         </div>
-
-        <div class="icon-box">
-          <div class="icon"><i class="bx bx-gift"></i></div>
-          <h4 class="title"><a href="">Nemo Enim</a></h4>
-          <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque</p>
-        </div>
-
-        <div class="icon-box">
-          <div class="icon"><i class="bx bx-atom"></i></div>
-          <h4 class="title"><a href="">Dine Pad</a></h4>
-          <p class="description">Explicabo est voluptatum asperiores consequatur magnam. Et veritatis odit. Sunt aut deserunt minus aut eligendi omnis</p>
-        </div>
-
-      </div>
     </div>
-
-  </div>
 </section><!-- End About Section -->
 
 <!-- ======= Counts Section ======= -->
@@ -367,7 +344,7 @@
 
     </div>
 
-  </div> 
+  </div>
 </section>-->
 <!-- End Portfolio Section -->
 
@@ -453,7 +430,7 @@
         <div class="member">
           <div class="member-img">
             <img src="frontend/assets/img/team/team-1.jpg" class="img-fluid" alt="">
-            <div class="social">    
+            <div class="social">
               <a href=""><i class="icofont-twitter"></i></a>
               <a href=""><i class="icofont-facebook"></i></a>
               <a href=""><i class="icofont-instagram"></i></a>
@@ -473,8 +450,8 @@
             <img src="frontend/assets/img/team/team-2.jpg" class="img-fluid" alt="">
             <div class="social">
               <a href=""><i class="icofont-twitter"></i></a>
-              <a href=""><i class="icofont-facebook"></i></a>
-              <a href=""><i class="icofont-instagram"></i></a>
+              <a href="https://www.facebook.com/eddy.surotho/"><i class="icofont-facebook"></i></a>
+              <a href="https://www.instagram.com/surotoedyn/"><i class="icofont-instagram"></i></a>
               <a href=""><i class="icofont-linkedin"></i></a>
             </div>
           </div>
