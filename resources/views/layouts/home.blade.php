@@ -416,7 +416,7 @@
 <!-- End Testimonials Section -->
 
 <!-- ======= Team Section ======= -->
-<section id="team" class="team section-bg">
+<!-- <section id="team" class="team section-bg">
   <div class="container">
 
     <div class="section-title">
@@ -519,7 +519,7 @@
     </div>
 
   </div>
-</section><!-- End Team Section -->
+</section>End Team Section -->
 
 <!-- ======= Gallery Section ======= -->
 <!-- <section id="gallery" class="gallery">
