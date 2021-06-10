@@ -8,7 +8,7 @@
   <div class="row">
     <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center">
       <h1>NOTIFIKASI</h1>
-      <h2>Paragraf</h2>
+      <h2>untuk sementara kyk gini aja dulu tampilan notifikasinya biar gampang, buat sebisamu dh liat tutorialnya di <a href="https://www.w3schools.com/bootstrap4/default.asp">sini</a> </h2>
       <div><a href="#about" class="btn-get-started scrollto">Get Started</a></div>
     </div>
     <div class="col-lg-6 order-1 order-lg-2 hero-img">
