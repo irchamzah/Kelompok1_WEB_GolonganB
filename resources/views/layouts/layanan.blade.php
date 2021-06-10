@@ -8,7 +8,7 @@
   <div class="row">
     <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center">
       <h1>LAYANAN</h1>
-      <h2></h2>
+      <h2>Accusantium quam, aliquam ultricies eget tempor id, aliquam eget nibh et. Maecen aliquam, risus at semper. Proin iaculis purus consequat sem cure digni ssim. Donec porttitora entum.</h2>
       <div><a href="#about" class="btn-get-started scrollto">Get Started</a></div>
     </div>
     <div class="col-lg-6 order-1 order-lg-2 hero-img">
@@ -22,18 +22,25 @@
 <main id="main">
 
 <!-- ======= About Section ======= -->
-<section id="layanan" class="layanan">
-    <div class="container">
-        <div class="row">
-            <div class="col-xl-7 col-lg-6 icon-boxes d-flex flex-column align-items-stretch justify-content-center py-5 px-lg-5">
-                <h3>INFORMASI SAMPAH</h3>
-                <p>Pilih Jenis Sampah yang akan dijual.</p>
-                <ul class="list-group">
-                    <li class="list-group-item d-flex justify-content-between align-items-center">
-            Kertas <span class="badge badge-primary badge-pill">Pilih</span> </li>
-                    <li class="list-group-item d-flex justify-content-between align-items-center">
-            Kardus <span class="badge badge-primary badge-pill">Pilih</span></li>
-                </ul><br>
+<section id="about" class="about">
+  <div class="container">
+
+    <div class="row">
+      
+      <div class="col-xl-7 col-lg-6 icon-boxes d-flex flex-column align-items-stretch justify-content-center py-5 px-lg-5">
+        <h3>INFORMASI SAMPAH</h3>
+        <p>Pilih Jenis Sampah yang akan dijual.</p>
+
+        <ul class="list-group">
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            Kertas
+            <span class="badge badge-primary badge-pill">Pilih</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            Kardus
+            <span class="badge badge-primary badge-pill">Pilih</span>
+          </li>
+        </ul><br>
 
         <table class="table">
                 <thead class="table-dark">
@@ -66,8 +73,8 @@
                 <input type="email" class="form-control" id="email" placeholder="Isi nama Penanggung Jawab" name="email">
               </div>
               <div class="form-group">
-                <label for="alamat">Alamat</label>
-                <input type="alamat" class="form-control" id="alamat" placeholder="Isi Alamat Rumah" name="alamat">
+                <label for="email">Alamat</label>
+                <input type="email" class="form-control" id="email" placeholder="Isi Alamat Rumah" name="email">
               </div>
               <div class="form-group">
                 <label for="pwd">Nomor Telepon</label>
@@ -88,7 +95,7 @@
   </div>
 </section><!-- End About Section -->
 
-
+  
 
 </main>
 <!-- End #main -->

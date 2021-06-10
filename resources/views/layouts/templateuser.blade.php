@@ -37,7 +37,7 @@
 
 <body>
 
-  @include('  layouts.navbar')
+  @include('  layouts.navbaruser')
 
   @yield('content')
 
