@@ -19,6 +19,10 @@ Route::get('/', 'App\Http\Controllers\HomeController@home')->name('home');
 
 Route::get('/layanan', 'App\Http\Controllers\LayananController@layanan');
 
+
+Route::get('/status_pesanan', 'App\Http\Controllers\StatusPesananController@status_pesanan');
+
+
 // Route::get('/login', function() {
 //     return view('/layouts/login');
 // });
@@ -34,6 +38,8 @@ Route::post('/postsignup', 'App\Http\Controllers\UserController@postsignup')->na
 Route::get('/homeuser', 'App\Http\Controllers\UserController@halamanuser');
 
 Route::get('/logout', 'App\Http\Controllers\UserController@logout')->name('logout');
+
+
 
 // Route::get('/hometest', function(){
 //     return 'HOME';
