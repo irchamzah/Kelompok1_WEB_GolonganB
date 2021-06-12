@@ -28,8 +28,6 @@ Route::get('/notifikasi', 'App\Http\Controllers\NotifikasiController@notifikasi'
 
 Route::get('/profil', 'App\Http\Controllers\ProfilController@profil');
 
-Route::get('/admin', 'App\Http\Controllers\AdminController@index');
-
 
 // Route::get('/login', function() {
 //     return view('/layouts/login');
