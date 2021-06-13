@@ -7,15 +7,40 @@
 <div class="container">
   <div class="row">
     <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center">
-      <h1>PROFIL</h1>
+     <!-- <h1>PROFIL</h1>
       <h2>buat membantu coba cari referensi, tampilan profil biasanya kyk gimana, terus utk lengkapnya liat tutorialnya di <a href="https://www.w3schools.com/bootstrap4/default.asp">sini</a></h2>
       <div><a href="#about" class="btn-get-started scrollto">Get Started</a></div>
-    </div>
-    <div class="col-lg-6 order-1 order-lg-2 hero-img">
-      <img src="frontend/assets/img/hero-img.png" class="img-fluid" alt="">
-    </div>
+    </div> -->
+
+      <div class="row">
+        <div class="col-md-6">
+          <label for="name">Nama</label>
+      <input type="text" class="form-control" placeholder="Masukkan name" name="name">
+        </div>
+        <div class="col-md-6">
+          <label for="email">Email</label>
+          <input type="email" class="form-control" placeholder="Masukkan Email" name="email">
+        </div>
+        <div class="col-md-12 pt-2">
+          <label for="alamat">Kecamatan</label>
+          <select name="" id="" class="form-control">
+            <option value="">semboro</option>
+          </select>
+        </div>
+        <div class="col-md-12 pt-2">
+          <label for="alamat">Alamat lengkap</label>
+          <textarea class="form-control" name="alamat"></textarea>
+        </div>
+      </div>
+    
+    <div class="row mt-md-5">
+      <div class="col-md-6">
+          <a href="fungsi/auth?type=logout" class="btn btn-danger w-100">Logout</a>
+      </div>
+      <div class="col-md-6">
+          <button type="submit" class="btn btn-success w-100">Simpan</button>
+      </div>
   </div>
-</div>
 
 </section><!-- End Hero -->
 
