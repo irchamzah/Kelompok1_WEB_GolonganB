@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Https\Controllers\HomeController;
 use App\Https\Controllers\UserController;
+use App\Https\Controllers\Admin\Auth\LoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -44,6 +45,16 @@ Route::post('/postsignup', 'App\Http\Controllers\UserController@postsignup')->na
 Route::get('/homeuser', 'App\Http\Controllers\UserController@halamanuser');
 
 Route::get('/logout', 'App\Http\Controllers\UserController@logout')->name('logout');
+
+Route::prefix('admin')->group(function(){
+    Route::get('/', [App\Http\Controllers\Admin\Auth\LoginController::class, 'loginform']);
+    Route::get('/login', [App\Http\Controllers\Admin\Auth\LoginController::class, 'loginform'])->name('admin.login');
+    Route::post('/login', [App\Http\Controllers\Admin\Auth\LoginController::class, 'login'])->name('admin.login');
+    Route::get('/home', [App\Http\Controllers\Admin\HomeController::class, 'index'])->name('admin.home');
+    Route::get('/logout', [App\Http\Controllers\Admin\Auth\LoginController::class, 'logout'])->name('admin.logout');
+
+    
+});
 
 
 
