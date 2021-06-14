@@ -63,27 +63,23 @@
         <div class="row">
 
           <div class="col-lg-3 col-md-6 footer-contact">
-            <h3>SIPAPA</h3>
+            <h3>SIPAPAH</h3>
             <p>
             Jl. Mastrip No.164,     <br>
             Krajan Timur, Sumbersari,<br>
             Kec. Sumbersari, <br>
             Kabupaten Jember,<br>
             Jawa Timur 68121 <br><br>
-              <strong>Phone:</strong> +62331333532<br>
-              <strong>Email:</strong> polije@gmail.com<br>
+              <strong>Phone:</strong> +6282146290446<br>
+              <strong>Email:</strong> sipapah@gmail.com<br>
             </p>
           </div>
 
           <div class="col-lg-3 col-md-6 footer-links">
             <h4>Sosial media</h4>
-            <p>Cras fermentum odio eu feugiat lide par naso tierra videa magna derita valies</p>
+            <p>Cek Kegiatan Sipapah di Instagram yuk!</p>
             <div class="social-links mt-3">
-              <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-              <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
               <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-              <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-              <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
             </div>
           </div>
 
@@ -111,14 +107,14 @@
 
     <div class="container py-4">
       <div class="copyright">
-        &copy; Copyright <strong><span>SIPAPA</span></strong>. All Rights Reserved
+        &copy; Copyright <strong><span>SIPAPAH</span></strong>. All Rights Reserved
       </div>
       <div class="credits">
         <!-- All the links in the footer should remain intact. -->
         <!-- You can delete the links only if you purchased the pro version. -->
         <!-- Licensing information: https://bootstrapmade.com/license/ -->
         <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/butterfly-free-bootstrap-theme/ -->
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+       <!-- Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>-->
       </div>
     </div>
   </footer><!-- End Footer -->

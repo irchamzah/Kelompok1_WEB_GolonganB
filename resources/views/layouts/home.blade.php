@@ -23,7 +23,7 @@
 <main id="main">
 
 <!-- ======= About Section ======= -->
-<section id="about" class="about">
+<!--<section id="about" class="about">
     <div class="container-fluid">
         <h1>Layanan</h1>
         <div class="row">
@@ -36,7 +36,8 @@
             </div>
         </div>
     </div>
-</section><!-- End About Section -->
+</section>-->
+<!-- End About Section -->
 
 
 <!-- ======= Testimonials Section ======= -->

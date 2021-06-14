@@ -373,6 +373,13 @@ h6 {
     top: 10px;
 }
 
+#hero .kreasi-img img {
+    width: 60%;
+    position: absolute;
+    left: 150px;
+    bottom: 10px;
+
+}
 /* @media (max-width: px) {
     #hero {
         height: 100vh;

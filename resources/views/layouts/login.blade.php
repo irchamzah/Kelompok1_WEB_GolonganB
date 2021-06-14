@@ -23,9 +23,9 @@
         </form>
 
     </div>
-    <div class="col-lg-6 order-1 order-lg-2 hero-img">
-      <img src="frontend/assets/img/hero-img.png" class="img-fluid" alt="">
-    </div>
+   <!-- <div class="col-lg-3 order-3 order-lg-2 daurulang">
+      <img src="frontend/assets/img/daurulang.png" class="img-fluid" alt="">
+  </div> -->
   </div>
 </div>
 
