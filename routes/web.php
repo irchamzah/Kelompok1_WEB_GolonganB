@@ -1,9 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Https\Controllers\HomeController;
-use App\Https\Controllers\UserController;
-use App\Https\Controllers\Admin\Auth\LoginController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\Admin;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,42 +16,42 @@ use App\Https\Controllers\Admin\Auth\LoginController;
 |z`
 */
 
-Route::get('/', 'App\Http\Controllers\HomeController@home')->name('home');
+Route::get('/', 'HomeController@home')->name('home');
 
-Route::get('/layanan', 'App\Http\Controllers\LayananController@layanan');
+Route::get('/layanan', 'LayananController@layanan');
 
 
-Route::get('/status_pesanan', 'App\Http\Controllers\StatusPesananController@status_pesanan');
+Route::get('/status_pesanan', 'StatusPesananController@status_pesanan');
 
-Route::get('/kreasi', 'App\Http\Controllers\KreasiController@kreasi');
+Route::get('/kreasi', 'KreasiController@kreasi');
 
-Route::get('/notifikasi', 'App\Http\Controllers\NotifikasiController@notifikasi');
+Route::get('/notifikasi', 'NotifikasiController@notifikasi');
 
-Route::get('/profil', 'App\Http\Controllers\ProfilController@profil');
+Route::get('/profil', 'ProfilController@profil');
 
 
 // Route::get('/login', function() {
 //     return view('/layouts/login');
 // });
 
-// Route::post('/postlogin', 'App\Http\Controllers\UserController@postlogin')->name('postlogin');
+// Route::post('/postlogin', 'UserController@postlogin')->name('postlogin');
 
-Route::get('/login', 'App\Http\Controllers\UserController@halamanLogin')->name('login');
-Route::post('/postlogin', 'App\Http\Controllers\UserController@postLogin')->name('postlogin');
+Route::get('/login', 'UserController@halamanLogin')->name('login');
+Route::post('/postlogin', 'UserController@postLogin')->name('postlogin');
 
-Route::get('/signup', 'App\Http\Controllers\UserController@halamanSignup')->name('signup');
-Route::post('/postsignup', 'App\Http\Controllers\UserController@postsignup')->name('postsignup');
+Route::get('/signup', 'UserController@halamanSignup')->name('signup');
+Route::post('/postsignup', 'UserController@postsignup')->name('postsignup');
 
-Route::get('/homeuser', 'App\Http\Controllers\UserController@halamanuser');
+Route::get('/homeuser', 'UserController@halamanuser');
 
-Route::get('/logout', 'App\Http\Controllers\UserController@logout')->name('logout');
+Route::get('/logout', 'UserController@logout')->name('logout');
 
 Route::prefix('admin')->group(function(){
-    Route::get('/', [App\Http\Controllers\Admin\Auth\LoginController::class, 'loginform']);
-    Route::get('/login', [App\Http\Controllers\Admin\Auth\LoginController::class, 'loginform'])->name('admin.login');
-    Route::post('/login', [App\Http\Controllers\Admin\Auth\LoginController::class, 'login'])->name('admin.login');
-    Route::get('/home', [App\Http\Controllers\Admin\HomeController::class, 'index'])->name('admin.home');
-    Route::get('/logout', [App\Http\Controllers\Admin\Auth\LoginController::class, 'logout'])->name('admin.logout');
+    Route::get('/', [Admin\Auth\LoginController::class, 'loginform']);
+    Route::get('/login', [Admin\Auth\LoginController::class, 'loginform'])->name('admin.login');
+    Route::post('/login', [Admin\Auth\LoginController::class, 'login'])->name('admin.login');
+    Route::get('/home', [Admin\HomeController::class, 'index'])->name('admin.home');
+    Route::get('/logout', [Admin\Auth\LoginController::class, 'logout'])->name('admin.logout');
 
     
 });
