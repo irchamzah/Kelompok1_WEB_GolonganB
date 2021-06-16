@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Hashids\Hashids;
 use App\Models\Category;
 use App\Models\Layanan;
 
@@ -11,8 +12,10 @@ class LayananController extends Controller
 {
     public function index()
     {
+        $hash = new Hashids();
+
         $layanans=Layanan::orderBy('id', 'DESC')->paginate(5);
-        return view('layanan.manage.index', compact('layanans'));
+        return view('layanan.manage.index', compact('layanans', 'hash'));
         //return view('layanan.index');
     }
 
@@ -103,9 +106,12 @@ class LayananController extends Controller
     }
 
     public function edit($id){
+
+        $hash = new Hashids();
+
         $categories=Category::get();
-        $layanans=Layanan::find($id);
-        return view('layanan.manage.edit',compact('categories', 'layanans'));
+        $layanans=Layanan::find($hash->decodeHex($id));
+        return view('layanan.manage.edit',compact('categories', 'layanans', 'hash'));
     } 
 
     
@@ -183,19 +189,22 @@ class LayananController extends Controller
 
     public function destroy($id)
     {
-        $layanans=Layanan::whereId($id)->first();
+        $hash = new Hashids();
+
+        $layanans=Layanan::whereId($hash->decodeHex($id))->first();
         if(\File::exists('storage/'.$layanans->file)){
             \File::delete('storage/'.$layanans->file);
         }
-        Layanan::whereId($id)->delete();
+        Layanan::whereId($hash->decodeHex($id))->delete();
         return back()->with('success', 'Hapus data sukses!');
     }
 
     public function show($id)
     {
+        $hash = new Hashids();
 
-        $layanans=Layanan::whereId($id)->first();
-        return view('layanan.show', compact('layanans'));
+        $layanans=Layanan::whereId($hash->decodeHex($id))->first();
+        return view('layanan.show', compact('layanans', 'hash'));
     }
 
     

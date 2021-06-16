@@ -17,6 +17,7 @@ class CategorySeeder extends Seeder
         \App\Models\Category::insert([
             ['name'=>'Kertas',],
             ['name'=>'Kardus',],
+            ['name'=>'Plastik',],
         ]);
     }
 }
