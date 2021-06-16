@@ -12,7 +12,7 @@
 <p><strong>ALAMAT RUMAH:</strong> {{$layanans->alamat}}</p>
 <p><strong>NOMOR TELEPON:</strong> {{$layanans->notelp}}</p>
 <P><strong>JENIS SAMPAH:</strong> {{$layanans->category->name}}</P>
-<p><strong>FOTO SAMPAH:</strong> {{$layanans->fotosampah}}</p>
+<p><strong>FOTO SAMPAH:</strong> <img class="img-fluid rounded" width="400px" src="{{asset('storage/'.$layanans->file)}}" alt=""> </p>
 <p><strong>TANGGAL DIJEMPUT:</strong> {{$layanans->tanggaljemput}}</p>
 <p><strong>STATUS PESANAN:</strong> {{$layanans->statuspesanan}}</p>
 <p><strong>PENDAPATAN:</strong> {{$layanans->pendapatan}}</p>
