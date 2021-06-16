@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 class StatusPesananController extends Controller
 {
     //
-    public function status_pesanan()
+    public function index()
     {
         return view('status.status_pesanan');
     }

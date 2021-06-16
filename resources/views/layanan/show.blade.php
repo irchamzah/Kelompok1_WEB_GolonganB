@@ -1,8 +1,24 @@
-@extends('layouts.templateuser')
+@extends('layouts.front.app')
 
-@section('content')
+@section('content') 
+
+<div class="col-lg-8">
+  <h1 calss="mt-4">{{$layanans->namapj}}</h1>
+
+</div>
+<BR></BR>
+<p><strong>DIBUAT PADA TANGGAL:</strong> {{date('d M Y', strtotime($layanans->created_at))}}</p>
+<p><strong>NAMA PENANGGUNG JAWAB:</strong> {{$layanans->namapj}}</p>
+<p><strong>ALAMAT RUMAH:</strong> {{$layanans->alamat}}</p>
+<p><strong>NOMOR TELEPON:</strong> {{$layanans->notelp}}</p>
+<P><strong>JENIS SAMPAH:</strong> {{$layanans->category->name}}</P>
+<p><strong>FOTO SAMPAH:</strong> {{$layanans->fotosampah}}</p>
+<p><strong>TANGGAL DIJEMPUT:</strong> {{$layanans->tanggaljemput}}</p>
+<p><strong>STATUS PESANAN:</strong> {{$layanans->statuspesanan}}</p>
+<p><strong>PENDAPATAN:</strong> {{$layanans->pendapatan}}</p>
+
 <!-- ======= Hero Section ======= -->
-<section id="hero" class="d-flex align-items-center">
+<!-- <section id="hero" class="d-flex align-items-center">
 
 <div class="container">
   <div class="row">
@@ -17,12 +33,13 @@
   </div>
 </div>
 
-</section><!-- End Hero -->
+</section> -->
+<!-- End Hero -->
 
-<main id="main">
+<!-- <main id="main"> -->
 
 <!-- ======= About Section ======= -->
-<section id="about" class="about">
+<!-- <section id="about" class="about">
   <div class="container">
 
     <div class="row">
@@ -76,9 +93,10 @@
 
     </div>
   </div>
-</section><!-- End About Section -->
+</section> -->
+<!-- End About Section -->
 
-<section id="hero" class="d-flex align-items-center">
+<!-- <section id="hero" class="d-flex align-items-center">
 
               <div class="container">
                   <div class="row">
@@ -110,7 +128,7 @@
             </section> 
 
 
-</main>
+</main> -->
 <!-- End #main -->
 
 @endsection

@@ -3,11 +3,15 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Category;
+use App\Models\Layanan;
+
 
 class HomeController extends Controller
 {
-    public function home()
+    public function index()
     {
-        return view('layouts.home');
+        $layanans=Layanan::inRandomOrder()->orderBy('id', 'DESC')->paginate(5);
+        return view('home', compact('layanans'));
     }
 }

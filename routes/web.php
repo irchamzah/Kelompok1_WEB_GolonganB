@@ -2,8 +2,17 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\LayananController;
+use App\Http\Controllers\StatusPesananController;
+use App\Http\Controllers\KreasiController;
+use App\Http\Controllers\NotifikasiController;
+use App\Http\Controllers\ProfilController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\Admin;
+
+use App\Http\Controllers\StatusController;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -16,18 +25,50 @@ use App\Http\Controllers\Admin;
 |z`
 */
 
-Route::get('/', 'HomeController@home')->name('home');
+// Route::get('/', 'HomeController@home')->name('home');
+//Route::get('/layanan', 'LayananController@layanan');
 
-Route::get('/layanan', 'LayananController@layanan');
 
 
-Route::get('/status_pesanan', 'StatusPesananController@status_pesanan');
+Route::get('/', [HomeController::class, 'index']);
+Route::get('/home', [HomeController::class, 'index']);
+// Route::get('/layanan', [layananController::class, 'index']);
 
-Route::get('/kreasi', 'KreasiController@kreasi');
 
-Route::get('/notifikasi', 'NotifikasiController@notifikasi');
+// ini route layanan
+Route::get('/manage/layanan', [layananController::class, 'index'])->name('manage.layanan');
+Route::get('/layanan/create', [layananController::class, 'create'])->name('layanan.create');
+Route::post('/layanan/store', [layananController::class, 'store'])->name('layanan.store');
+Route::get('/layanan/edit/{id}', [layananController::class, 'edit'])->name('layanan.edit');
+Route::post('/layanan/update/{id}', [layananController::class, 'update'])->name('layanan.update');
+Route::get('/layanan/delete/{id}', [layananController::class, 'destroy'])->name('layanan.delete');
+Route::get('/layanan/detail/{id}', [layananController::class, 'show'])->name('layanan.detail');
 
-Route::get('/profil', 'ProfilController@profil');
+
+// Route::get('/status_pesanan', [StatusPesananController::class, 'index']);
+
+
+Route::get('/kreasi', [KreasiController::class, 'index']);
+Route::get('/notifikasi', [NotifikasiController::class, 'index']);
+Route::get('/profil', [ProfilController::class, 'index']);
+
+// Route::get('/manage/layananuser', [LayananController::Class, 'index'])->name('manage.layananuser');
+
+
+
+
+
+// Route::get('/login', 'UserController@halamanLogin')->name('login');
+// Route::post('/postlogin', 'UserController@postLogin')->name('postlogin');
+
+// Route::get('/signup', 'UserController@halamanSignup')->name('signup');
+// Route::post('/postsignup', 'UserController@postsignup')->name('postsignup');
+
+// Route::get('/homeuser', 'UserController@halamanuser');
+
+// Route::get('/logout', 'UserController@logout')->name('logout');
+
+
 
 
 // Route::get('/login', function() {
@@ -36,15 +77,8 @@ Route::get('/profil', 'ProfilController@profil');
 
 // Route::post('/postlogin', 'UserController@postlogin')->name('postlogin');
 
-Route::get('/login', 'UserController@halamanLogin')->name('login');
-Route::post('/postlogin', 'UserController@postLogin')->name('postlogin');
 
-Route::get('/signup', 'UserController@halamanSignup')->name('signup');
-Route::post('/postsignup', 'UserController@postsignup')->name('postsignup');
 
-Route::get('/homeuser', 'UserController@halamanuser');
-
-Route::get('/logout', 'UserController@logout')->name('logout');
 
 Route::prefix('admin')->group(function(){
     Route::get('/', [Admin\Auth\LoginController::class, 'loginform']);

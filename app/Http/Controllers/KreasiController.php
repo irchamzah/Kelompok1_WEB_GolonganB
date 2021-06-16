@@ -7,8 +7,8 @@ use Illuminate\Http\Request;
 class KreasiController extends Controller
 {
     //
-    public function kreasi()
+    public function index()
     {
-        return view('kreasi.detail_kreasi');
+        return view('kreasi.show');
     }
 }
