@@ -20,7 +20,7 @@ class CreateLayanansTable extends Migration
             $table->string('alamat', 200)->default('');
             $table->string('notelp', 200)->default('');
             $table->string('name', 200)->default('');
-            $table->string('fotosampah', 200)->default('');
+            // $table->string('fotosampah', 200)->default('');
             $table->string('tanggaljemput', 200)->default('');
             $table->string('statuspesanan', 200)->default('');
             $table->string('pendapatan', 200)->default('');

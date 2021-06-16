@@ -33,7 +33,7 @@
                 <td scope="row">{{$layanan->alamat}}</td> 
                 <td scope="row">{{$layanan->notelp}}</td>
                 <td scope="row">{{$layanan->category->name}}</td>
-                <td scope="row">{{$layanan->fotosampah}}</td>
+                <td scope="row"><img class="img-fluid rounded" width="400px" src="{{asset('storage/'.$layanan->file)}}" alt=""></td>
                 <td scope="row">{{$layanan->tanggaljemput}}</td>
                 <td scope="row">{{$layanan->statuspesanan}}</td>
                 <td scope="row">{{$layanan->pendapatan}}</td>

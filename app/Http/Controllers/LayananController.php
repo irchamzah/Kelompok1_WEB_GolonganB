@@ -24,12 +24,75 @@ class LayananController extends Controller
 
     public function store(Request $request)
     {
+        // $request->validate([
+        //     'category'=>'required',
+        //     'namapj'=>'required|min:1|max:50',
+        //     'alamat'=>'required|min:1|max:200',
+        //     'notelp'=>'required|min:1|max:20',
+        //     'file'=>'required|max:5000|mimes:jpeg,png,jpg',
+        //     'tanggaljemput'=>'required|min:1|max:20',
+        //     'statuspesanan'=>'required|min:1|max:20',
+        //     'pendapatan'=>'required',
+        // ]);
+
+        // validasi dan kustom pesan peringatan
+        $rules=[
+            'category'=>'required',
+            'namapj'=>'required|min:2|max:50',
+            'alamat'=>'required|min:2|max:200',
+            'notelp'=>'required|min:2|max:20',
+            'file'=>'required|max:5000|mimes:jpeg,png,jpg',
+            'tanggaljemput'=>'required|min:8|max:20',
+            'statuspesanan'=>'required|min:2|max:20',
+            'pendapatan'=>'required',
+        ];
+        $message=[
+            // 'required'=>' :attribute tidak boleh kosong',
+            // 'unique'=>' :attribute sudah digunakan',
+            // 'min'=>' :attribute karakter terlalu pendek',
+            // 'max'=>' :attribute karakter terlalu panjang / ukuran terlalu besar',
+
+            'category.required'=>' Kategori tidak boleh kosong',
+
+            'namapj.required'=>' Nama Penanggung Jawab tidak boleh kosong',
+            'namapj.min'=>' Nama Penanggung Jawab terlalu pendek',
+            'namapj.max'=>' Nama Penanggung Jawab terlalu panjang',
+
+            'alamat.required'=>' Alamat tidak boleh kosong',
+            'alamat.min'=>' Alamat terlalu pendek',
+            'alamat.max'=>' Alamat terlalu panjang',
+
+            'notelp.required'=>' Nomor Telepon tidak boleh kosong',
+            'notelp.min'=>' Nomor Telepon terlalu pendek',
+            'notelp.max'=>' Nomor Telepon terlalu panjang',
+
+            'file.required'=>' File tidak boleh kosong',
+            'file.max'=>' Ukuran File terlalu besar',
+
+            'tanggaljemput.required'=>' Tanggal Jemput tidak boleh kosong',
+            'tanggaljemput.min'=>' Tanggal Jemput terlalu pendek',
+            'tanggaljemput.max'=>' Tanggal Jemput terlalu panjang',
+
+            'statuspesanan.required'=>' Status Pesanan tidak boleh kosong',
+            'statuspesanan.min'=>' Status Pesanan terlalu pendek',
+            'statuspesanan.max'=>' Status Pesanan terlalu panjang',
+
+            'pendapatan.required'=>' Pendapatan tidak boleh kosong',
+            'pendapatan.min'=>' Pendapatan terlalu pendek',
+            'pendapatan.max'=>' Pendapatan terlalu panjang',
+        ];
+        $this->validate($request,$rules,$message);
+
+        //mengubah nama file foto yang diupload
+        $fileName=time().'.'.$request->file->extension();
+        $request->file('file')->storeAs('public', $fileName);
         $layanans=Layanan::create([
             'category_id'=>$request->category,
             'namapj'=>$request->namapj,
             'alamat'=>$request->alamat,
             'notelp'=>$request->notelp,
-            'fotosampah'=>$request->fotosampah,
+            'file'=>$fileName,
+            // 'fotosampah'=>$request->fotosampah,
             'tanggaljemput'=>$request->tanggaljemput,
             'statuspesanan'=>$request->statuspesanan,
             'pendapatan'=>$request->pendapatan,
@@ -49,13 +112,67 @@ class LayananController extends Controller
 
     public function update(Request $request, $id)
     {
+        $rules=[
+            'category'=>'required',
+            'namapj'=>'required|min:2|max:50',
+            'alamat'=>'required|min:2|max:200',
+            'notelp'=>'required|min:2|max:20',
+            'file'=>'required|max:5000|mimes:jpeg,png,jpg',
+            'tanggaljemput'=>'required|min:8|max:20',
+            'statuspesanan'=>'required|min:2|max:20',
+            'pendapatan'=>'required',
+        ];
+        $message=[
+            // 'required'=>' :attribute tidak boleh kosong',
+            // 'unique'=>' :attribute sudah digunakan',
+            // 'min'=>' :attribute karakter terlalu pendek',
+            // 'max'=>' :attribute karakter terlalu panjang / ukuran terlalu besar',
+
+            'category.required'=>' Kategori tidak boleh kosong',
+
+            'namapj.required'=>' Nama Penanggung Jawab tidak boleh kosong',
+            'namapj.min'=>' Nama Penanggung Jawab terlalu pendek',
+            'namapj.max'=>' Nama Penanggung Jawab terlalu panjang',
+
+            'alamat.required'=>' Alamat tidak boleh kosong',
+            'alamat.min'=>' Alamat terlalu pendek',
+            'alamat.max'=>' Alamat terlalu panjang',
+
+            'notelp.required'=>' Nomor Telepon tidak boleh kosong',
+            'notelp.min'=>' Nomor Telepon terlalu pendek',
+            'notelp.max'=>' Nomor Telepon terlalu panjang',
+
+            'file.required'=>' File tidak boleh kosong',
+            'file.max'=>' Ukuran File terlalu besar',
+
+            'tanggaljemput.required'=>' Tanggal Jemput tidak boleh kosong',
+            'tanggaljemput.min'=>' Tanggal Jemput terlalu pendek',
+            'tanggaljemput.max'=>' Tanggal Jemput terlalu panjang',
+
+            'statuspesanan.required'=>' Status Pesanan tidak boleh kosong',
+            'statuspesanan.min'=>' Status Pesanan terlalu pendek',
+            'statuspesanan.max'=>' Status Pesanan terlalu panjang',
+
+            'pendapatan.required'=>' Pendapatan tidak boleh kosong',
+            'pendapatan.min'=>' Pendapatan terlalu pendek',
+            'pendapatan.max'=>' Pendapatan terlalu panjang',
+        ];
+        $this->validate($request,$rules,$message);
+
         $layanans=Layanan::whereId($id)->first();
+        if(\File::exists('storage/'.$layanans->file)){
+            \File::delete('storage/'.$layanans->file);
+        }
+        $fileName=time().'.'.$request->file->extension();
+        $request->file('file')->storeAs('public', $fileName);
+
         $layanans->update([
             'category_id'=>$request->category,
             'namapj'=>$request->namapj,
             'alamat'=>$request->alamat,
             'notelp'=>$request->notelp,
-            'fotosampah'=>$request->fotosampah,
+            'file'=>$fileName,
+            // 'fotosampah'=>$request->fotosampah,
             'tanggaljemput'=>$request->tanggaljemput,
             'statuspesanan'=>$request->statuspesanan,
             'pendapatan'=>$request->pendapatan,
@@ -66,12 +183,17 @@ class LayananController extends Controller
 
     public function destroy($id)
     {
+        $layanans=Layanan::whereId($id)->first();
+        if(\File::exists('storage/'.$layanans->file)){
+            \File::delete('storage/'.$layanans->file);
+        }
         Layanan::whereId($id)->delete();
         return back()->with('success', 'Hapus data sukses!');
     }
 
     public function show($id)
     {
+
         $layanans=Layanan::whereId($id)->first();
         return view('layanan.show', compact('layanans'));
     }
