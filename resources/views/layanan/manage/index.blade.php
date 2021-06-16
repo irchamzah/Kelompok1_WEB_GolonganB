@@ -37,9 +37,9 @@
                 <td scope="row">{{$layanan->tanggaljemput}}</td>
                 <td scope="row">{{$layanan->statuspesanan}}</td>
                 <td scope="row">{{$layanan->pendapatan}}</td>
-                <td scope="row"><a href="{{route('layanan.edit', $layanan->id)}}"> Edit </a></td>
-                <td scope="row"><a href="{{route('layanan.delete', $layanan->id)}}"> Delete </a></td>
-                <td scope="row"><a href="{{route('layanan.detail', $layanan->id)}}"> Detail </a></td>
+                <td scope="row"><a href="{{route('layanan.edit', $hash->encodeHex($layanan->id))}}"> Edit </a></td>
+                <td scope="row"><a href="{{route('layanan.delete', $hash->encodeHex($layanan->id))}}"> Delete </a></td>
+                <td scope="row"><a href="{{route('layanan.detail', $hash->encodeHex($layanan->id))}}"> Detail </a></td>
             </tr>
             @endforeach
         </body>
