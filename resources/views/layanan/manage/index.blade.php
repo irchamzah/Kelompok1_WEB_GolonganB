@@ -1,5 +1,11 @@
 @extends('layouts.front.app')
 @section('content')
+<br>
+<br>
+<br>
+<section id="services" class="services section-bg">
+<div class="container">
+<div class="row">
 <div class="col-lg-8">
     <h1 class="mt-4">JUAL SAMPAH</h1>
     <p class="lead"><a href="{{route('layanan.create')}}">Tambah Pesanan</a> </p>
@@ -33,7 +39,7 @@
                 <td scope="row">{{$layanan->alamat}}</td> 
                 <td scope="row">{{$layanan->notelp}}</td>
                 <td scope="row">{{$layanan->category->name}}</td>
-                <td scope="row"><img class="img-fluid rounded" width="400px" src="{{asset('storage/'.$layanan->file)}}" alt=""></td>
+                <td scope="row"><img class="img" width="200px" src="{{asset('storage/'.$layanan->file)}}" alt=""></td>
                 <td scope="row">{{$layanan->tanggaljemput}}</td>
                 <td scope="row">{{$layanan->statuspesanan}}</td>
                 <td scope="row">{{$layanan->pendapatan}}</td>
@@ -47,5 +53,8 @@
     </table>
     {{$layanans->render()}}
 </div>
+</div>
+</div>
 
+</section>
 @endsection

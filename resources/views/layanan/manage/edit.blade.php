@@ -1,5 +1,10 @@
 @extends('layouts.front.app')
 @section('content')
+<br>
+<br>
+<br>
+<section id="services" class="services section-bg">
+  <div class="container">
 <div class="col-lg-8">
     <h1 class="mt-4">UBAH PESANAN</h1>
     @if(Session::has('success'))
@@ -66,25 +71,27 @@
                 <div class="alert alert-danger">{{$message}}</div>
             @enderror
         </div>
-        <div class="form-group">
+        <!-- <div class="form-group">
             <label for="">Status Pesanan</label>
             <input type="text" class="form-control @error('statuspesanan') is-invalid @enderror" name="statuspesanan" value="{{old('statuspesanan', $layanans->statuspesanan)}}">
             @error('statuspesanan')
                 <div class="alert alert-danger">{{$message}}</div>
             @enderror
-        </div>
-        <div class="form-group">
+        </div> -->
+        <!-- <div class="form-group">
             <label for="">Pendapatan</label>
             <input type="text" class="form-control @error('pendapatan') is-invalid @enderror" name="pendapatan" value="{{old('pendapatan', $layanans->pendapatan)}}">
             @error('pendapatan')
                 <div class="alert alert-danger">{{$message}}</div>
             @enderror
-        </div>
+        </div> -->
         
         <button type="submit" class="btn btn-primary">Perbarui Data!</button>
     </form>
     
 </div>
+</div>
 
+</section>
 
 @endsection

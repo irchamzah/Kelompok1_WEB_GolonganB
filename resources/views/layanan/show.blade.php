@@ -1,11 +1,16 @@
 @extends('layouts.front.app')
 
 @section('content') 
+<br>
+<br>
+<br>
+<section id="services" class="services section-bg">
+<div class="container">
 
-<div class="col-lg-8">
+<!-- <div class="col-lg-8">
   <h1 calss="mt-4">{{$layanans->namapj}}</h1>
 
-</div>
+</div> -->
 <BR></BR>
 <p><strong>DIBUAT PADA TANGGAL:</strong> {{date('d M Y', strtotime($layanans->created_at))}}</p>
 <p><strong>NAMA PENANGGUNG JAWAB:</strong> {{$layanans->namapj}}</p>
@@ -16,6 +21,10 @@
 <p><strong>TANGGAL DIJEMPUT:</strong> {{$layanans->tanggaljemput}}</p>
 <p><strong>STATUS PESANAN:</strong> {{$layanans->statuspesanan}}</p>
 <p><strong>PENDAPATAN:</strong> {{$layanans->pendapatan}}</p>
+
+</div>
+
+</section>
 
 <!-- ======= Hero Section ======= -->
 <!-- <section id="hero" class="d-flex align-items-center">

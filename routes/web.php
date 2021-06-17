@@ -9,6 +9,7 @@ use App\Http\Controllers\NotifikasiController;
 use App\Http\Controllers\ProfilController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\Admin;
+use App\Http\Controllers\WelcomeController;
 
 use App\Http\Controllers\StatusController;
 
@@ -29,28 +30,52 @@ use App\Http\Controllers\StatusController;
 //Route::get('/layanan', 'LayananController@layanan');
 
 
+// Route::get('/', function(){
+//     return view('welcome');
+// });
 
-Route::get('/', [HomeController::class, 'index']);
-Route::get('/home', [HomeController::class, 'index']);
+Route::get('/',[WelcomeController::class, 'index'])->name('welcome');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+// ini route layanan
+Route::get('/manage/layanan', [layananController::class, 'index'])->name('manage.layanan')->middleware('auth');
+Route::get('/layanan/create', [layananController::class, 'create'])->name('layanan.create')->middleware('auth');
+Route::post('/layanan/store', [layananController::class, 'store'])->name('layanan.store')->middleware('auth');
+Route::get('/layanan/edit/{id}', [layananController::class, 'edit'])->name('layanan.edit')->middleware('auth');
+Route::post('/layanan/update/{id}', [layananController::class, 'update'])->name('layanan.update')->middleware('auth');
+Route::get('/layanan/delete/{id}', [layananController::class, 'destroy'])->name('layanan.delete')->middleware('auth');
+Route::get('/layanan/detail/{id}', [layananController::class, 'show'])->name('layanan.detail')->middleware('auth');
+
+Route::get('/kreasi', [KreasiController::class, 'index'])->middleware('auth');
+Route::get('/notifikasi', [NotifikasiController::class, 'index'])->middleware('auth');
+Route::get('/profil', [ProfilController::class, 'index'])->middleware('auth');
+
+Route::prefix('admin')->group(function(){
+    Route::get('/', [Admin\Auth\LoginController::class, 'loginform']);
+    Route::get('/login', [Admin\Auth\LoginController::class, 'loginform'])->name('admin.login');
+    Route::post('/login', [Admin\Auth\LoginController::class, 'login'])->name('admin.login');
+    Route::get('/home', [Admin\HomeController::class, 'index'])->name('admin.home');
+    Route::get('/logout', [Admin\Auth\LoginController::class, 'logout'])->name('admin.logout');
+});
+
+// Route::get('/', [HomeController::class, 'index']);
+// Route::get('/home', [HomeController::class, 'index']);
+
+
+
 // Route::get('/layanan', [layananController::class, 'index']);
 
 
-// ini route layanan
-Route::get('/manage/layanan', [layananController::class, 'index'])->name('manage.layanan');
-Route::get('/layanan/create', [layananController::class, 'create'])->name('layanan.create');
-Route::post('/layanan/store', [layananController::class, 'store'])->name('layanan.store');
-Route::get('/layanan/edit/{id}', [layananController::class, 'edit'])->name('layanan.edit');
-Route::post('/layanan/update/{id}', [layananController::class, 'update'])->name('layanan.update');
-Route::get('/layanan/delete/{id}', [layananController::class, 'destroy'])->name('layanan.delete');
-Route::get('/layanan/detail/{id}', [layananController::class, 'show'])->name('layanan.detail');
+
 
 
 // Route::get('/status_pesanan', [StatusPesananController::class, 'index']);
 
 
-Route::get('/kreasi', [KreasiController::class, 'index']);
-Route::get('/notifikasi', [NotifikasiController::class, 'index']);
-Route::get('/profil', [ProfilController::class, 'index']);
+
 
 // Route::get('/manage/layananuser', [LayananController::Class, 'index'])->name('manage.layananuser');
 
@@ -80,18 +105,11 @@ Route::get('/profil', [ProfilController::class, 'index']);
 
 
 
-Route::prefix('admin')->group(function(){
-    Route::get('/', [Admin\Auth\LoginController::class, 'loginform']);
-    Route::get('/login', [Admin\Auth\LoginController::class, 'loginform'])->name('admin.login');
-    Route::post('/login', [Admin\Auth\LoginController::class, 'login'])->name('admin.login');
-    Route::get('/home', [Admin\HomeController::class, 'index'])->name('admin.home');
-    Route::get('/logout', [Admin\Auth\LoginController::class, 'logout'])->name('admin.logout');
 
-    
-});
 
 
 
 // Route::get('/hometest', function(){
 //     return 'HOME';
 // })->name('home');
+
