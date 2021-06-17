@@ -46,8 +46,8 @@ class LayananController extends Controller
             'notelp'=>'required|min:2|max:20',
             'file'=>'required|max:5000|mimes:jpeg,png,jpg',
             'tanggaljemput'=>'required|min:8|max:20',
-            'statuspesanan'=>'required|min:2|max:20',
-            'pendapatan'=>'required',
+            // 'statuspesanan'=>'required|min:2|max:20',
+            // 'pendapatan'=>'required',
         ];
         $message=[
             // 'required'=>' :attribute tidak boleh kosong',
@@ -76,13 +76,13 @@ class LayananController extends Controller
             'tanggaljemput.min'=>' Tanggal Jemput terlalu pendek',
             'tanggaljemput.max'=>' Tanggal Jemput terlalu panjang',
 
-            'statuspesanan.required'=>' Status Pesanan tidak boleh kosong',
-            'statuspesanan.min'=>' Status Pesanan terlalu pendek',
-            'statuspesanan.max'=>' Status Pesanan terlalu panjang',
+            // 'statuspesanan.required'=>' Status Pesanan tidak boleh kosong',
+            // 'statuspesanan.min'=>' Status Pesanan terlalu pendek',
+            // 'statuspesanan.max'=>' Status Pesanan terlalu panjang',
 
-            'pendapatan.required'=>' Pendapatan tidak boleh kosong',
-            'pendapatan.min'=>' Pendapatan terlalu pendek',
-            'pendapatan.max'=>' Pendapatan terlalu panjang',
+            // 'pendapatan.required'=>' Pendapatan tidak boleh kosong',
+            // 'pendapatan.min'=>' Pendapatan terlalu pendek',
+            // 'pendapatan.max'=>' Pendapatan terlalu panjang',
         ];
         $this->validate($request,$rules,$message);
 
@@ -97,8 +97,8 @@ class LayananController extends Controller
             'file'=>$fileName,
             // 'fotosampah'=>$request->fotosampah,
             'tanggaljemput'=>$request->tanggaljemput,
-            'statuspesanan'=>$request->statuspesanan,
-            'pendapatan'=>$request->pendapatan,
+            // 'statuspesanan'=>$request->statuspesanan,
+            // 'pendapatan'=>$request->pendapatan,
         ]);
 
         return back()->with('success', 'posting Data Sukses!');
@@ -125,8 +125,8 @@ class LayananController extends Controller
             'notelp'=>'required|min:2|max:20',
             'file'=>'required|max:5000|mimes:jpeg,png,jpg',
             'tanggaljemput'=>'required|min:8|max:20',
-            'statuspesanan'=>'required|min:2|max:20',
-            'pendapatan'=>'required',
+            // 'statuspesanan'=>'required|min:2|max:20',
+            // 'pendapatan'=>'required',
         ];
         $message=[
             // 'required'=>' :attribute tidak boleh kosong',
@@ -155,13 +155,13 @@ class LayananController extends Controller
             'tanggaljemput.min'=>' Tanggal Jemput terlalu pendek',
             'tanggaljemput.max'=>' Tanggal Jemput terlalu panjang',
 
-            'statuspesanan.required'=>' Status Pesanan tidak boleh kosong',
-            'statuspesanan.min'=>' Status Pesanan terlalu pendek',
-            'statuspesanan.max'=>' Status Pesanan terlalu panjang',
+            // 'statuspesanan.required'=>' Status Pesanan tidak boleh kosong',
+            // 'statuspesanan.min'=>' Status Pesanan terlalu pendek',
+            // 'statuspesanan.max'=>' Status Pesanan terlalu panjang',
 
-            'pendapatan.required'=>' Pendapatan tidak boleh kosong',
-            'pendapatan.min'=>' Pendapatan terlalu pendek',
-            'pendapatan.max'=>' Pendapatan terlalu panjang',
+            // 'pendapatan.required'=>' Pendapatan tidak boleh kosong',
+            // 'pendapatan.min'=>' Pendapatan terlalu pendek',
+            // 'pendapatan.max'=>' Pendapatan terlalu panjang',
         ];
         $this->validate($request,$rules,$message);
 
@@ -180,8 +180,8 @@ class LayananController extends Controller
             'file'=>$fileName,
             // 'fotosampah'=>$request->fotosampah,
             'tanggaljemput'=>$request->tanggaljemput,
-            'statuspesanan'=>$request->statuspesanan,
-            'pendapatan'=>$request->pendapatan,
+            // 'statuspesanan'=>$request->statuspesanan,
+            // 'pendapatan'=>$request->pendapatan,
         ]);
 
         return back()->with('success', 'Ubah Data Sukses!');
