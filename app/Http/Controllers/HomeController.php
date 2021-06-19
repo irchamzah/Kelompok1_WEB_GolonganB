@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use Hashids\Hashids;
 use App\Models\Category;
 use App\Models\Layanan;
+use App\Models\User;
+use Auth;
 
 class HomeController extends Controller
 {
@@ -26,9 +28,12 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $hash = new Hashids();
+        // $user = User::where('id', Auth::user()->id)->first();
+        // dd($user);
 
-        $layanans=Layanan::orderBy('id', 'DESC')->paginate(5);
-        return view('welcome', compact('layanans', 'hash'));
+        return view('welcome');
+
+                // $hash = new Hashids();
+        // $layanans=Layanan::orderBy('id', 'DESC')->paginate(5);
     }
 }

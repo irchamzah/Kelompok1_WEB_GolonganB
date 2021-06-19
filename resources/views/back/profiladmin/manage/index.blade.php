@@ -8,5 +8,5 @@
     </div>
   @endif
   
-  <P><STRONG> SELAMAT DATANG DI HOME ADMIN! </STRONG></P>
+  <P><STRONG> SELAMAT DATANG DI PROFIL-ADMIN ADMIN! </STRONG></P>
 @endsection

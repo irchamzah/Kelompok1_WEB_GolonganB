@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddFileToLayanansTable extends Migration
+class AddFileToLayananDetailsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,9 @@ class AddFileToLayanansTable extends Migration
      */
     public function up()
     {
-        Schema::table('layanans', function (Blueprint $table) {
+        Schema::table('layanan_details', function (Blueprint $table) {
             //
-            $table->string('file')->after('name')->default('');
+            $table->string('file')->after('user_id')->default('');
         });
     }
 
@@ -26,7 +26,7 @@ class AddFileToLayanansTable extends Migration
      */
     public function down()
     {
-        Schema::table('layanans', function (Blueprint $table) {
+        Schema::table('layanan_details', function (Blueprint $table) {
             //
         });
     }

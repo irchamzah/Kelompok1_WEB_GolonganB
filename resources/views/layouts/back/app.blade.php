@@ -7,7 +7,7 @@
         <meta name="author" content="" />
         <meta name="csrf-token" content="{{csrf_token()}}">
 
-        <title>Simple Sidebar - Start Bootstrap Template</title>
+        <title>ADMIN - SIPAPAH</title>
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="{{ asset('back/assets/favicon.ico') }}" />
         <!-- Core theme CSS (includes Bootstrap)-->

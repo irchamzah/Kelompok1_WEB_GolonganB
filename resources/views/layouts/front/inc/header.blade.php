@@ -30,7 +30,7 @@
                             @endif
                         @else
 
-                        <li><a class="nav-link" href="{{ route('manage.layanan') }}">Layanan</a></li>
+                        <li><a class="nav-link" href="{{ url('layanan') }}">Layanan</a></li>
                         <li><a class="nav-link" href="{{ url('kreasi') }}">Kreasi</a></li>
                         <li><a class="nav-link" href="{{ url('notifikasi') }}">Notifikasi</a></li>
 
@@ -39,7 +39,14 @@
                                     {{ Auth::user()->name }}
                                 </a>
 
+                                
+
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+
+                                    <a class="dropdown-item" href="{{ url('profil') }}">
+                                        Profile
+                                    </a>
+
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -50,6 +57,7 @@
                                         @csrf
                                     </form>
                                 </div>
+                                
                             </li>
                         @endguest
 
