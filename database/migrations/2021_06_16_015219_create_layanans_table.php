@@ -15,15 +15,7 @@ class CreateLayanansTable extends Migration
     {
         Schema::create('layanans', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('category_id');
-            $table->string('namapj', 200)->default('');
-            $table->string('alamat', 200)->default('');
-            $table->string('notelp', 200)->default('');
-            $table->string('name', 200)->default('');
-            // $table->string('fotosampah', 200)->default('');
-            $table->string('tanggaljemput', 200)->default('');
-            $table->string('statuspesanan', 200)->default('');
-            $table->string('pendapatan', 200)->default('');
+            $table->foreignId('user_id');
             $table->timestamps();
         });
     }

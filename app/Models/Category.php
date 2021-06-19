@@ -11,7 +11,12 @@ class Category extends Model
     protected $table="categories";
 
     //relasi ke tabel layananuser
-    public function layanan(){
-        return $this->hasMany(layanan::class);
+    // public function layanan(){
+    //     return $this->hasMany(layanan::class);
+    // }
+
+    public function layanan_detail()
+    {
+        return $this->hasMany('App\Models\LayananDetail', 'category_id', 'id');
     }
 }

@@ -29,23 +29,23 @@ class UserSeeder extends Seeder
             'password' => bcrypt('suroto')
         ]);
 
-        User::create([
-            'name' => 'shenila',
-            'email' => 'shenila@gmail.com',
-            'password' => bcrypt('shenila')
-        ]);
+        // User::create([
+        //     'name' => 'shenila',
+        //     'email' => 'shenila@gmail.com',
+        //     'password' => bcrypt('shenila')
+        // ]);
 
-        User::create([
-            'name' => 'pras',
-            'email' => 'pras@gmail.com',
-            'password' => bcrypt('pras')
-        ]);
+        // User::create([
+        //     'name' => 'pras',
+        //     'email' => 'pras@gmail.com',
+        //     'password' => bcrypt('pras')
+        // ]);
 
-        User::create([
-            'name' => 'afdal',
-            'email' => 'afdal@gmail.com',
-            'password' => bcrypt('afdal')
-        ]);
+        // User::create([
+        //     'name' => 'afdal',
+        //     'email' => 'afdal@gmail.com',
+        //     'password' => bcrypt('afdal')
+        // ]);
 
         
     }

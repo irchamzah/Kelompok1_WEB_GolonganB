@@ -11,18 +11,26 @@ class Layanan extends Model
     protected $table="layanans";
 
     protected $fillable=[
-        'category_id',
-        'namapj',
-        'alamat',
-        'notelp',
-        'file',
-        // 'fotosampah',
-        'tanggaljemput',
-        'statuspesanan',
-        'pendapatan',
+        // 'category_id',
+        'user_id',
+        'status',
+        // 'file',
+        // 'tanggaljemput',
+        // 'statuspesanan',
+        // 'pendapatan',
     ];
 
-    public function category(){
-        return $this->belongsTo(Category::class);
+    // public function category(){
+    //     return $this->belongsTo(Category::class);
+    // }
+
+    public function user()
+    {
+        return $this->belongsTo('App\Models\User', 'user_id', 'id');
+    }
+    
+    public function layanan_detail()
+    {
+        return $this->hasMany('App\Models\LayananDetail', 'layanan_id', 'id');
     }
 }
