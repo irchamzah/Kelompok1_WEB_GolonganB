@@ -50,6 +50,7 @@ Route::get('/notifikasi', [NotifikasiController::class, 'index']);
 
 // ini route profil User
 Route::get('/profil', [ProfilController::class, 'index']);
+Route::post('/profil', [ProfilController::class, 'update']);
 
 
 // INI ROUTE ADMIN
