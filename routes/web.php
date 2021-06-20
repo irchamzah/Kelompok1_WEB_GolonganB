@@ -32,7 +32,7 @@ Auth::routes();
 Route::get('/',[WelcomeController::class, 'index'])->name('welcome');
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index']);
 
-// INI ROUTE USER
+/////////////////////////////////////////// INI ROUTE USER
 // ini route layanan User
 Route::get('/layanan', [layananController::class, 'index']);
 Route::get('/layanan/create/{id}', [layananController::class, 'create']);
@@ -44,6 +44,7 @@ Route::get('/layanan/delete/{id}', [layananController::class, 'destroy']);
 
 // ini route kreasi User
 Route::get('/kreasi', [KreasiController::class, 'index']);
+Route::get('/kreasi/detail/{id}', [KreasiController::class, 'show']);
 
 // ini route notifikasi User
 Route::get('/notifikasi', [NotifikasiController::class, 'index']);
@@ -53,7 +54,7 @@ Route::get('/profil', [ProfilController::class, 'index']);
 Route::post('/profil', [ProfilController::class, 'update']);
 
 
-// INI ROUTE ADMIN
+/////////////////////////////////////////// INI ROUTE ADMIN
 Route::prefix('admin')->group(function(){
     Route::get('/', [Admin\Auth\LoginController::class, 'loginform']);
     Route::get('/login', [Admin\Auth\LoginController::class, 'loginform'])->name('admin.login');

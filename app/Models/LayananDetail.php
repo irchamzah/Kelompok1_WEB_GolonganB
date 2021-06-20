@@ -33,4 +33,9 @@ class LayananDetail extends Model
     {
         return $this->belongsTo('App\Models\user', 'user_id', 'id');
     }
+
+    public function notifikasi()
+    {
+        return $this->hasMany('App\Models\Notifikasi', 'layanan_detail_id', 'id');
+    }
 }
