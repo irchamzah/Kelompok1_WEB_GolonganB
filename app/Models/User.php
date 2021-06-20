@@ -52,4 +52,9 @@ class User extends Authenticatable
     {
         return $this->hasMany('App\Models\LayananDetail', 'user_id', 'id');
     }
+
+    public function notifikasi()
+    {
+        return $this->hasMany('App\Models\Notifikasi', 'user_id', 'id');
+    }
 }
