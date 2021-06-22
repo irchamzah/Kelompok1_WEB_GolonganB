@@ -20,7 +20,7 @@
                         <h4>Daftar Riwayat Pesanan</h4><hr>
                         <table class="table table-sm">
                             <thead class="table-light">
-                                <tr>
+                                <tr align="center">
                                     <th scope="col">No</th>
                                     <th scope="col">Nama User</th>
                                     <th scope="col">Alamat</th>
@@ -36,7 +36,7 @@
                             </thead>
                             <body>
                                 @foreach($layanan_details as $index=>$layanan_detail)
-                                    <tr>
+                                    <tr align="center">
                                         <td scope="row">{{$index+1}}</td>
                                         <td scope="row">{{$user->name}}</td>
                                         <td scope="row">{{$user->alamat}}</td> 
@@ -45,7 +45,7 @@
                                         <td scope="row"><img class="img" width="200px" src="{{asset('storage/'  . $layanan_detail->file)}}" alt=""></td> 
                                         <td scope="row">{{$layanan_detail->tanggaljemput}}</td>
                                         <td scope="row">{{$layanan_detail->keterangan}}</td>
-                                        <td scope="row">{{$layanan_detail->status}}</td>
+                                        <td scope="row">{{$layanan_detail->status_pesanan->name}}</td>
                                         <td scope="row">Rp. {{$layanan_detail->pendapatan}}</td>
                                         <td scope="row">
                                         <a href="{{url('layanan/edit', $layanan_detail->id)}}"> Edit </a>

@@ -14,7 +14,7 @@
             @foreach($daurulangs as $index=>$daurulang)
             <div class="col-lg-4 col-md-6">
                 <div class="icon-box">
-                    <div class="img-thumbnail"><a href="{{url('kreasi/detail', $daurulang->id)}}"><img src="frontend/assets/img/portfolio/portfolio-1.jpg" class="img-fluid" alt=""></a></div>
+                    <div class="img-thumbnail"><a href="{{url('kreasi/detail', $daurulang->id)}}"><img src="{{asset('storage/'  . $daurulang->foto)}}" class="img-fluid" alt=""></a></div>
                     <h4 class="title"><a href="{{url('kreasi/detail', $daurulang->id)}}">{{$daurulang->nama}}</a></h4>
                     <p class="description">{{$daurulang->keterangan}}</p>
                 </div>

@@ -4,9 +4,11 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Hashids\Hashids;
+// use Hashids\Hashids;
 use App\Models\Category;
 use App\Models\Layanan;
+use App\Models\Admin;
+use App\Models\LayananDetail;
 
 class HomeController extends Controller
 {
@@ -17,175 +19,66 @@ class HomeController extends Controller
     }
 
     public function index(){
-        $hash = new Hashids();
+        // $hash = new Hashids();
 
-        $layanans=Layanan::orderBy('id', 'DESC')->paginate(5);
-        return view('back.home', compact('layanans', 'hash'));
+        $layanan_details=LayananDetail::orderBy('id', 'DESC')->paginate(20);
+        return view('back.home', compact('layanan_details'));
     }
 
-    public function create()
-    {
-        $categories=Category::get();
-        return view('layanan.manage.create', compact('categories'));        
+    public function konfirmasi($id){
+        // $hash = new Hashids();
+
+        $layanan_detail=LayananDetail::find($id);
+        return view('back.layanan.manage.edit', compact('layanan_detail'));
     }
 
-    public function store(Request $request)
+    public function pesanan($id)
     {
-        
-        // validasi dan kustom pesan peringatan
-        $rules=[
-            'category'=>'required',
-            'namapj'=>'required|min:2|max:50',
-            'alamat'=>'required|min:2|max:200',
-            'notelp'=>'required|min:2|max:20',
-            'file'=>'required|max:5000|mimes:jpeg,png,jpg',
-            'tanggaljemput'=>'required|min:8|max:20',
-            // 'statuspesanan'=>'required|min:2|max:20',
-            // 'pendapatan'=>'required',
-        ];
-        $message=[
-            'category.required'=>' Kategori tidak boleh kosong',
+        $layanan_detail = LayananDetail::whereId($id)->first();
 
-            'namapj.required'=>' Nama Penanggung Jawab tidak boleh kosong',
-            'namapj.min'=>' Nama Penanggung Jawab terlalu pendek',
-            'namapj.max'=>' Nama Penanggung Jawab terlalu panjang',
-
-            'alamat.required'=>' Alamat tidak boleh kosong',
-            'alamat.min'=>' Alamat terlalu pendek',
-            'alamat.max'=>' Alamat terlalu panjang',
-
-            'notelp.required'=>' Nomor Telepon tidak boleh kosong',
-            'notelp.min'=>' Nomor Telepon terlalu pendek',
-            'notelp.max'=>' Nomor Telepon terlalu panjang',
-
-            'file.required'=>' File tidak boleh kosong',
-            'file.max'=>' Ukuran File terlalu besar',
-
-            'tanggaljemput.required'=>' Tanggal Jemput tidak boleh kosong',
-            'tanggaljemput.min'=>' Tanggal Jemput terlalu pendek',
-            'tanggaljemput.max'=>' Tanggal Jemput terlalu panjang',
-
-            // 'statuspesanan.required'=>' Status Pesanan tidak boleh kosong',
-            // 'statuspesanan.min'=>' Status Pesanan terlalu pendek',
-            // 'statuspesanan.max'=>' Status Pesanan terlalu panjang',
-
-            // 'pendapatan.required'=>' Pendapatan tidak boleh kosong',
-            // 'pendapatan.min'=>' Pendapatan terlalu pendek',
-            // 'pendapatan.max'=>' Pendapatan terlalu panjang',
-        ];
-        $this->validate($request,$rules,$message);
-
-        //mengubah nama file foto yang diupload
-        $fileName=time().'.'.$request->file->extension();
-        $request->file('file')->storeAs('public', $fileName);
-        $layanans=Layanan::create([
-            'category_id'=>$request->category,
-            'namapj'=>$request->namapj,
-            'alamat'=>$request->alamat,
-            'notelp'=>$request->notelp,
-            'file'=>$fileName,
-            'tanggaljemput'=>$request->tanggaljemput,
-            // 'statuspesanan'=>$request->statuspesanan,
-            // 'pendapatan'=>$request->pendapatan,
+        $layanan_detail->update([
+            'status_id' => 2,
         ]);
 
-        return back()->with('success', 'posting Data Sukses!');
+        return back()->with('success', 'Status Pesanan berhasil Dikonfirmasi!, SEGERA JEMPUT SAMPAHNYA!');
 
     }
 
-    public function edit($id){
 
-        $hash = new Hashids();
-
-        $categories=Category::get();
-        $layanans=Layanan::find($hash->decodeHex($id));
-        return view('layanan.manage.edit',compact('categories', 'layanans', 'hash'));
-    } 
-
-    
-
+    //ini ketika isi pendapatan
     public function update(Request $request, $id)
     {
+        // dd($request);
         $rules=[
-            'category'=>'required',
-            'namapj'=>'required|min:2|max:50',
-            'alamat'=>'required|min:2|max:200',
-            'notelp'=>'required|min:2|max:20',
-            'file'=>'required|max:5000|mimes:jpeg,png,jpg',
-            'tanggaljemput'=>'required|min:8|max:20',
-            // 'statuspesanan'=>'required|min:2|max:20',
-            // 'pendapatan'=>'required',
+            'pendapatan'=>'required',
         ];
+
         $message=[
-            'category.required'=>' Kategori tidak boleh kosong',
-
-            'namapj.required'=>' Nama Penanggung Jawab tidak boleh kosong',
-            'namapj.min'=>' Nama Penanggung Jawab terlalu pendek',
-            'namapj.max'=>' Nama Penanggung Jawab terlalu panjang',
-
-            'alamat.required'=>' Alamat tidak boleh kosong',
-            'alamat.min'=>' Alamat terlalu pendek',
-            'alamat.max'=>' Alamat terlalu panjang',
-
-            'notelp.required'=>' Nomor Telepon tidak boleh kosong',
-            'notelp.min'=>' Nomor Telepon terlalu pendek',
-            'notelp.max'=>' Nomor Telepon terlalu panjang',
-
-            'file.required'=>' File tidak boleh kosong',
-            'file.max'=>' Ukuran File terlalu besar',
-
-            'tanggaljemput.required'=>' Tanggal Jemput tidak boleh kosong',
-            'tanggaljemput.min'=>' Tanggal Jemput terlalu pendek',
-            'tanggaljemput.max'=>' Tanggal Jemput terlalu panjang',
-
-            // 'statuspesanan.required'=>' Status Pesanan tidak boleh kosong',
-            // 'statuspesanan.min'=>' Status Pesanan terlalu pendek',
-            // 'statuspesanan.max'=>' Status Pesanan terlalu panjang',
-
-            // 'pendapatan.required'=>' Pendapatan tidak boleh kosong',
-            // 'pendapatan.min'=>' Pendapatan terlalu pendek',
-            // 'pendapatan.max'=>' Pendapatan terlalu panjang',
+            'pendapatan.required'=>' Pendapatan tidak boleh kosong',
         ];
         $this->validate($request,$rules,$message);
+        
+        $layanan_detail = LayananDetail::whereId($id)->first();
 
-        $layanans=Layanan::whereId($id)->first();
-        if(\File::exists('storage/'.$layanans->file)){
-            \File::delete('storage/'.$layanans->file);
-        }
-        $fileName=time().'.'.$request->file->extension();
-        $request->file('file')->storeAs('public', $fileName);
-
-        $layanans->update([
-            'category_id'=>$request->category,
-            'namapj'=>$request->namapj,
-            'alamat'=>$request->alamat,
-            'notelp'=>$request->notelp,
-            'file'=>$fileName,
-            'tanggaljemput'=>$request->tanggaljemput,
-            // 'statuspesanan'=>$request->statuspesanan,
-            // 'pendapatan'=>$request->pendapatan,
+        $layanan_detail->update([
+            'status_id' => 3,
+            'pendapatan' => $request->pendapatan,
         ]);
 
-        return back()->with('success', 'Ubah Data Sukses!');
+        return back()->with('success', 'Input Pendapatan berhasil disimpan!');
+
     }
 
     public function destroy($id)
     {
-        $hash = new Hashids();
-
-        $layanans=Layanan::whereId($hash->decodeHex($id))->first();
-        if(\File::exists('storage/'.$layanans->file)){
-            \File::delete('storage/'.$layanans->file);
+        $layanan_detail = LayananDetail::whereId($id)->first();
+        if(\File::exists('storage/'.$layanan_detail->file)){
+            \File::delete('storage/'.$layanan_detail->file);
         }
-        Layanan::whereId($hash->decodeHex($id))->delete();
+        LayananDetail::whereId($id)->delete();
         return back()->with('success', 'Hapus data sukses!');
     }
 
-    public function show($id)
-    {
-        $hash = new Hashids();
+    
 
-        $layanans=Layanan::whereId($hash->decodeHex($id))->first();
-        return view('layanan.show', compact('layanans', 'hash'));
-    }
 }

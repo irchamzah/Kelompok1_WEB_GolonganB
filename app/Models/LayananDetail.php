@@ -16,6 +16,7 @@ class LayananDetail extends Model
         'file',
         'tanggaljemput',
         'keterangan',
+        'status_id',
         'pendapatan',
     ];
 
@@ -37,5 +38,10 @@ class LayananDetail extends Model
     public function notifikasi()
     {
         return $this->hasMany('App\Models\Notifikasi', 'layanan_detail_id', 'id');
+    }
+
+    public function status_pesanan()
+    {
+        return $this->belongsTo('App\Models\StatusPesanan', 'status_id', 'id');
     }
 }

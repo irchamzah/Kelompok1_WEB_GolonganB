@@ -12,7 +12,7 @@
         </div>    
         <div class="row">
             <div class="img">
-                <img src="{{asset('storage/'  . $daurulang->foto)}}" class="img-fluid" alt="">{{$daurulang->foto}}
+                <img src="{{asset('storage/'  . $daurulang->foto)}}" class="img-fluid" alt="">
                 <p class="description">{{$daurulang->keterangan_detail}}</p>
             </div>
         </div>
