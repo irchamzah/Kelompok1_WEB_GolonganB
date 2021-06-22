@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 // use Hashids\Hashids;
 use App\Models\Category;
 use App\Models\Layanan;
+use App\Models\Notifikasi;
 use App\Models\Admin;
 use App\Models\LayananDetail;
 
@@ -18,16 +19,22 @@ class HomeController extends Controller
         $this->middleware('adminMiddle');
     }
 
-    public function index(){
+    public function index(Request $request){
         // $hash = new Hashids();
 
-        $layanan_details=LayananDetail::orderBy('id', 'DESC')->paginate(20);
+        if($request->has('cari')){
+            $layanan_details = LayananDetail::where('id', 'LIKE', '%'.$request->cari.'%')->get();
+        }else{
+            $layanan_details=LayananDetail::orderBy('id', 'DESC')->paginate(20);
+        }
+
+
         return view('back.home', compact('layanan_details'));
     }
 
     public function konfirmasi($id){
         // $hash = new Hashids();
-
+        
         $layanan_detail=LayananDetail::find($id);
         return view('back.layanan.manage.edit', compact('layanan_detail'));
     }
@@ -39,8 +46,32 @@ class HomeController extends Controller
         $layanan_detail->update([
             'status_id' => 2,
         ]);
+        $notifikasi = new Notifikasi;
+        $notifikasi->user_id = $layanan_detail->user_id;
+        // $notifikasi->layanan_detail_id = $layanan_detail->id;
+        $notifikasi->title = 'PESANAN SUDAH DIKONFIRMASI!';
+        $notifikasi->keterangan = 'Pesananmu Sudah dikonfirmasi!, Diharapkan Penanggung Jawab sedang berada di Alamat yang Terkirim';
+        $notifikasi->save();
 
         return back()->with('success', 'Status Pesanan berhasil Dikonfirmasi!, SEGERA JEMPUT SAMPAHNYA!');
+
+    }
+
+    public function tolak(Request $request,$id)
+    {
+        $layanan_detail = LayananDetail::whereId($id)->first();
+        $layanan_detail->update([
+            'status_id' => 4,
+        ]);
+        $notifikasi = new Notifikasi;
+        $notifikasi->user_id = $layanan_detail->user_id;
+        // $notifikasi->layanan_detail_id = $layanan_detail->id;
+        $notifikasi->title = 'PESANAN DITOLAK!';
+        $notifikasi->keterangan = $request->keterangantolak;
+        $notifikasi->save();
+
+
+        return back()->with('success', 'Status Pesanan berhasil Ditolak!');
 
     }
 
@@ -59,14 +90,16 @@ class HomeController extends Controller
         $this->validate($request,$rules,$message);
         
         $layanan_detail = LayananDetail::whereId($id)->first();
-
         $layanan_detail->update([
             'status_id' => 3,
             'pendapatan' => $request->pendapatan,
         ]);
+        $notifikasi = Notifikasi::where('user_id', $layanan_detail->user_id)->first();
+        $notifikasi->title = 'PESANAN TELAH SELESAI!';
+        $notifikasi->keterangan = 'Pesananmu Telah Selesai!, Terimakasih telah Menggunakan Aplikasi kami!';
+        $notifikasi->update();
 
         return back()->with('success', 'Input Pendapatan berhasil disimpan!');
-
     }
 
     public function destroy($id)

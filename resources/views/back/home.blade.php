@@ -11,11 +11,15 @@
   <div class="container">
     <h2>DAFTAR PESANAN</h2>
     <p>The .thead-dark class adds a black background to table headers, and the .thead-light class adds a grey background to table headers:</p>
+    <form action="/admin/home" method="get" class="form-inline my-2 my-lg-0">
+      <input type="search" name="cari" placeholder="Cari ID PESANAN" aria-label="Search" class="form-control mr-sm-2">
+      <button type="submit" class="btn btn-outline-success my-2 my-sm-0">Cari</button>
+    </form>
     <table class="table">
       <thead class="thead-dark">
         <tr>
           <th>No</th>
-          <!-- <th>Layanan Id</th> -->
+          <th>ID Pesanan</th>
           <th>Nama User</th>
           <th>Jenis Sampah</th>
           <th>Foto Sampah</th>
@@ -33,14 +37,14 @@
       @foreach($layanan_details as $index=>$layanan_detail)
         <tr>
           <td>{{$index+1}}</td>
-          <!-- <td>{{$layanan_detail->layanan_id}}</td> -->
+          <td>{{$layanan_detail->id}}</td>
           <td><a href="{{route('admin.profiluser.detail', $layanan_detail->user->id)}}">{{$layanan_detail->user->name}}</a></td>
           <td>{{$layanan_detail->category->name}}</td>
           <td><button type="button" class="btn" data-toggle="modal" data-target="#myModal{{$layanan_detail->id}}"><img class="img" width="200px" src="{{asset('storage/'  . $layanan_detail->file)}}" alt=""></button></td>
           <td>{{$layanan_detail->created_at}}</td>
           <td>{{$layanan_detail->tanggaljemput}}</td>
           <td>{{$layanan_detail->keterangan}}</td>
-          <td>{{$layanan_detail->status_pesanan->name}}</td>
+          <td><strong>{{$layanan_detail->status_pesanan->name}}</strong></td>
           <td>Rp. {{$layanan_detail->pendapatan}}</td>
           <td>
             <div class="btn-group btn-group-vertical">
@@ -60,16 +64,23 @@
                 </button>
               </a>
 
-              @else ($layanan_detail->status_id == 3)
+              @elseif ($layanan_detail->status_id == 3)
 
               <button type="button" class="btn btn-success" disabled>
                     PESANAN SELESAI
-                  </button>
+              </button>
                   
+
+              @else ($layanan_detail->status_id == 4)
+
+              <button type="button" class="btn btn-dark " disabled>
+                    PESANAN DITOLAK
+              </button>
               @endif
 
+
               <a href=" {{route('admin.home.konfirmasi.destroy', $layanan_detail->id)}}">
-                <button type="button" class="btn btn-danger">
+                <button type="button" class="btn btn-danger" onclick="return confirm('Anda yakin akan menghapus data ?');">
                   DELETE
                 </button>
               </a>

@@ -6,11 +6,11 @@
     <div class="row">
       <div class="col-md-15">
 
-      @if(Session::has('success'))
-                <div class="alert alert-success" role="alert">
-                    {{Session::get('success')}}
-                </div>
-            @endif
+        @if(Session::has('success'))
+            <div class="alert alert-success" role="alert">
+                {{Session::get('success')}}
+            </div>
+        @endif
 
             <form method="POST" action="{{route('admin.kreasi.store')}}" enctype="multipart/form-data">
                 @csrf
@@ -28,7 +28,7 @@
                 </div>
 
                 <div class="form-group row">
-                    <label for="foto" class="col-md-2 col-form-label text-md-right">Upload Foto Kreasi</label>
+                    <label for="foto" class="col-md-2 col-form-label text-md-right">Upload Foto Tutorial</label>
                     <div class="col-md-6">
                         <input type="file" class="form-control-form @error('foto') is-invalid @enderror" name="foto" accept="image/*">
                         @error('foto')
@@ -65,7 +65,7 @@
                 <div class="form-group row mb-0">
                     <div class="col-md-6 offset-md-2">
                         <button type="submit" class="btn btn-primary">
-                            Tambah Kreasi
+                            TAMBAH TUTORIAL
                         </button>
                     </div>
                 </div>

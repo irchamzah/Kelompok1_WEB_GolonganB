@@ -21,9 +21,13 @@ class ProfilAdminController extends Controller
         $this->middleware('adminMiddle');
     }
 
-    public function index()
+    public function index(Request $request)
     {
-        $admins = Admin::paginate(20);
+        if($request->has('cari')){
+            $admins = Admin::where('name', 'LIKE', '%'.$request->cari.'%')->get();
+        }else{
+            $admins = Admin::orderBy('id','desc')->paginate(20);
+        }
 
         return view('back.profiladmin.manage.index', compact('admins'));
 
@@ -84,6 +88,9 @@ class ProfilAdminController extends Controller
         $rules=[
             'name' => 'required', 'string', 'max:255',
             'email' => 'required', 'string', 'email', 'max:255', 'unique:admins',
+            'alamat' => 'required', 'string', 'max:255',
+            'nohp' => 'required', 'string', 'max:255',
+            'foto'=>'required|max:5000|mimes:jpeg,png,jpg',
             'password' => 'confirmed',
         ];
 
@@ -98,6 +105,18 @@ class ProfilAdminController extends Controller
             'email.max'=>' Email Terlalu Panjang',
             'email.unique'=>' Email Sudah Digunakan',
 
+            'alamat.required'=>' Nama Tidak Boleh Kosong',
+            'alamat.string'=>' Nama Harus Berupa String',
+            'alamat.max'=>' Nama Terlalu Panjang',
+
+            'nohp.required'=>' Nama Tidak Boleh Kosong',
+            'nohp.string'=>' Nama Harus Berupa String',
+            'nohp.max'=>' Nama Terlalu Panjang',
+
+            'foto.required'=>' Foto tidak boleh kosong',
+            'foto.max'=>' Ukuran File Terlalu Besar',
+            'foto.mimes'=>' File Format Harus jpeg,png,jpg',
+
             // 'password.required'=>' Password tidak boleh kosong',
             // 'password.string'=>' Password Harus Berupa String',
             // 'password.min'=>' Password Terlalu Pendek',
@@ -109,9 +128,21 @@ class ProfilAdminController extends Controller
         $admin = Admin::whereId($id)->first();
         $admin->name = $request->name;
         $admin->email = $request->email;
+        $admin->alamat = $request->alamat;
+        $admin->nohp = $request->nohp;
         if(!empty($request->password))
         {
             $admin->password = Hash::make($request->password);
+        }
+        if(!empty($request->foto))
+        {
+            if(\File::exists('storage/'.$admin->foto))
+            {
+                \File::delete('storage/'.$admin->foto);
+            }
+            $fileName=time().'.'.$request->foto->extension();
+            $request->file('foto')->storeAs('public', $fileName);
+            $admin->foto = $fileName;
         }
         $admin->update();
 
@@ -121,6 +152,9 @@ class ProfilAdminController extends Controller
     public function destroy($id)
     {
         $admin = Admin::whereId($id)->first();
+        if(\File::exists('storage/'.$admin->foto)){
+            \File::delete('storage/'.$admin->foto);
+        }
         Admin::whereId($id)->delete();
         return back()->with('success', 'Hapus data sukses!');
     }

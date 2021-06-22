@@ -16,7 +16,6 @@ class CreateNotifikasisTable extends Migration
         Schema::create('notifikasis', function (Blueprint $table) {
             $table->id();
             $table->string('user_id');
-            $table->string('layanan_detail_id');
             $table->string('title');
             $table->text('keterangan');
             $table->timestamps();

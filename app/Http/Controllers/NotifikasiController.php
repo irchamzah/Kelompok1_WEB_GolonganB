@@ -19,7 +19,7 @@ class NotifikasiController extends Controller
     public function index()
     {
         
-        $notifikasis = Notifikasi::where('user_id', Auth::user()->id)->paginate(20);
+        $notifikasis = Notifikasi::where('user_id', Auth::user()->id)->orderBy('id', 'desc')->paginate(20);
         return view('notifikasi.index', compact('notifikasis'));
     }
 }

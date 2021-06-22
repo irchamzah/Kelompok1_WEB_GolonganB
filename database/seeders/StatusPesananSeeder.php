@@ -17,6 +17,7 @@ class StatusPesananSeeder extends Seeder
             ['name'=>'Belum Dikonfirmasi',],
             ['name'=>'Sudah Dikonfirmasi',],
             ['name'=>'Pesanan Selesai',],
+            ['name'=>'Pesanan Ditolak',],
         ]);
     }
 }

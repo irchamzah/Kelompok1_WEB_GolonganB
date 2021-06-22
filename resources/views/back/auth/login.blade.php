@@ -82,7 +82,7 @@
             Licensing information: https://bootstrapmade.com/license/
             Purchase the pro version form: https://bootstrapmade.com/buy/?theme=NiceAdmin
           -->
-          Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+          Pergi Ke Halaman <a href="{{url('/login')}}">User</a>
         </div>
     </div>
   </div>

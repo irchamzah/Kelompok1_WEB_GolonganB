@@ -19,10 +19,11 @@
                 <table class="table table-borderless">
                   <tbody>
                     <tr>
-                      <th>{{$index+1}}. {{$notifikasi->title}}</th>
+                      <th><h6><STRONg>{{$notifikasi->title}}</STRONg></h6></th>
                     </tr>
                     <tr>
-                      <td>{{$notifikasi->keterangan}}<hr></td>
+                      <td>{{$notifikasi->keterangan}}. Lihat Riwayat Pemesanan <a href="{{url('/layanan')}}">Disini!</a><hr></td>
+                      <td align="right">{{$notifikasi->updated_at}}</td>
                     </tr>
                   </tbody>
                 </table>
