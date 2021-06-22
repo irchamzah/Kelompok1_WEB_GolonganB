@@ -21,7 +21,7 @@ class CreateLayananDetailsTable extends Migration
             // $table->string('file');
             $table->date('tanggaljemput');
             $table->string('keterangan');
-            $table->string('status');
+            $table->string('status_id');
             $table->string('pendapatan');
             $table->timestamps();
         });

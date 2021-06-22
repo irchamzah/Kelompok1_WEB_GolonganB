@@ -75,7 +75,7 @@ class LayananController extends Controller
         $layanan_detail->file = $fileName;
         $layanan_detail->tanggaljemput = $request->tanggaljemput;
         $layanan_detail->keterangan = $request->keterangan;
-        $layanan_detail->status = 'belum dikonfirmasi';
+        $layanan_detail->status_id = 1;
         $layanan_detail->pendapatan = 0;
         $layanan_detail->save();
 
@@ -96,15 +96,15 @@ class LayananController extends Controller
     public function update(Request $request, $id)
     {
         $rules=[
-            'category'=>'required',
-            'file'=>'required|max:5000|mimes:jpeg,png,jpg',
+            // 'category'=>'required',
+            'file'=>'max:5000|mimes:jpeg,png,jpg',
             'tanggaljemput'=>'required|min:8|max:20',
         ];
 
         $message=[
-            'category.required'=>' Kategori tidak boleh kosong',
+            // 'category.required'=>' Kategori tidak boleh kosong',
 
-            'file.required'=>' File tidak boleh kosong',
+            // 'file.required'=>' File tidak boleh kosong',
             'file.max'=>' Ukuran File terlalu besar',
 
             'tanggaljemput.required'=>' Tanggal Jemput tidak boleh kosong',
@@ -114,29 +114,45 @@ class LayananController extends Controller
         $this->validate($request,$rules,$message);
 
         // simpan ke database layanan detail
-        $id_layanan_baru = Layanan::where('user_id', Auth::user()->id)->first();
+        // $id_layanan_baru = Layanan::where('user_id', Auth::user()->id)->first();
         $layanan_detail = LayananDetail::whereId($id)->first();
-
-        // menghapus file yang ada di storage
-        if(\File::exists('storage/'.$layanan_detail->file))
+        $layanan_detail->tanggaljemput = $request->tanggaljemput;
+        $layanan_detail->keterangan = $request->keterangan;
+        // $layanan_detail->status = 0;
+        if(!empty($request->category))
         {
-            \File::delete('storage/'.$layanan_detail->file);
+            $layanan_detail->category_id = $request->category;
         }
-        //mengubah nama file foto yang diupload
-        $fileName=time().'.'.$request->file->extension();
-        $request->file('file')->storeAs('public', $fileName);
 
-        $layanan_detail->update([
-            'layanan_id' => $id_layanan_baru->id,
-            'category_id' => $request->category,
-            'user_id' => Auth::user()->id,
-            'file' => $fileName,
-            'tanggaljemput' => $request->tanggaljemput,
-            'keterangan' => $request->keterangan,
-            'pendapatan' => 0,
-        ]);
+        if(!empty($request->file))
+        {
+            // $user->password = Hash::make($request->password);
+
+            // menghapus file yang ada di storage
+            if(\File::exists('storage/'.$layanan_detail->file))
+            {
+                \File::delete('storage/'.$layanan_detail->file);
+            }
+            //mengubah nama file foto yang diupload
+            $fileName=time().'.'.$request->file->extension();
+            $request->file('file')->storeAs('public', $fileName);
+
+            $layanan_detail->file = $fileName;
+        }
+
+        $layanan_detail->update();
 
         return back()->with('success', 'Ubah Data Sukses!');
+
+        // $layanan_detail->update([
+        //     // 'layanan_id' => $id_layanan_baru->id,
+        //     // // 'category_id' => $request->category,
+        //     // 'user_id' => Auth::user()->id,
+            
+        //     'tanggaljemput' => $request->tanggaljemput,
+        //     'keterangan' => $request->keterangan,
+        //     'pendapatan' => 0,
+        // ]);
     }
 
     public function destroy($id)
