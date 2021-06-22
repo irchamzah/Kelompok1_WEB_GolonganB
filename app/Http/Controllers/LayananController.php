@@ -22,7 +22,7 @@ class LayananController extends Controller
         $categories = Category::get();
         $user = User::where('id', Auth::user()->id)->first();
         $layanans = Layanan::where('user_id', Auth::user()->id)->paginate(20);
-        $layanan_details = LayananDetail::where('user_id', Auth::user()->id)->paginate(20);
+        $layanan_details = LayananDetail::where('user_id', Auth::user()->id)->orderBy('id','desc')->paginate(20);
         
         return view('layanan.manage.index', compact('categories', 'user', 'layanans', 'layanan_details'));
     }
@@ -40,7 +40,8 @@ class LayananController extends Controller
         $rules=[
             'category'=>'required',
             'file'=>'required|max:5000|mimes:jpeg,png,jpg',
-            'tanggaljemput'=>'required|min:8|max:20',
+            'tanggaljemput'=>'required|after:tomorrow',
+            'keterangan'=>'required',
         ];
 
         $message=[
@@ -48,10 +49,12 @@ class LayananController extends Controller
 
             'file.required'=>' File tidak boleh kosong',
             'file.max'=>' Ukuran File terlalu besar',
+            'file.mimes'=>' Jenis File Harus Berformat: jpeg,png,jpg',
 
             'tanggaljemput.required'=>' Tanggal Jemput tidak boleh kosong',
-            'tanggaljemput.min'=>' Tanggal Jemput terlalu pendek',
-            'tanggaljemput.max'=>' Tanggal Jemput terlalu panjang',
+            'tanggaljemput.after'=>' Tanggal Jemput tidak boleh Hari ini atau Sebelumnya',
+
+            'keterangan.required'=>' Keterangan tidak boleh kosong',
         ];
         $this->validate($request,$rules,$message);
 
@@ -98,7 +101,8 @@ class LayananController extends Controller
         $rules=[
             // 'category'=>'required',
             'file'=>'max:5000|mimes:jpeg,png,jpg',
-            'tanggaljemput'=>'required|min:8|max:20',
+            'tanggaljemput'=>'required|after:tomorrow',
+            'keterangan'=>'required',
         ];
 
         $message=[
@@ -106,10 +110,12 @@ class LayananController extends Controller
 
             // 'file.required'=>' File tidak boleh kosong',
             'file.max'=>' Ukuran File terlalu besar',
+            'file.mimes'=>' Jenis File Harus Berformat: jpeg,png,jpg',
 
             'tanggaljemput.required'=>' Tanggal Jemput tidak boleh kosong',
-            'tanggaljemput.min'=>' Tanggal Jemput terlalu pendek',
-            'tanggaljemput.max'=>' Tanggal Jemput terlalu panjang',
+            'tanggaljemput.after'=>' Tanggal Jemput tidak boleh Hari ini atau Sebelumnya',
+
+            'keterangan.required'=>' Keterangan tidak boleh kosong',
         ];
         $this->validate($request,$rules,$message);
 

@@ -20,10 +20,14 @@ class KreasiController extends Controller
         $this->middleware('adminMiddle');
     }
 
-    public function index(){
+    public function index(Request $request){
         // $hash = new Hashids();
-
-        $daurulangs=Daurulang::orderBy('id', 'DESC')->paginate(20);
+        if($request->has('cari')){
+            $daurulangs = Daurulang::where('nama', 'LIKE', '%'.$request->cari.'%')->get();
+        }else{
+            $daurulangs=Daurulang::orderBy('id', 'DESC')->paginate(20);
+        }
+        
         return view('back.kreasi.manage.index', compact('daurulangs'));
     }
 
