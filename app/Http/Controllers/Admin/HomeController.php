@@ -59,6 +59,16 @@ class HomeController extends Controller
 
     public function tolak(Request $request,$id)
     {
+        $rules=[
+            'keterangantolak'=>'required',
+        ];
+
+        $message=[
+            'keterangantolak.required'=>' Keterangan tidak boleh kosong',
+        ];
+        $this->validate($request,$rules,$message);
+
+
         $layanan_detail = LayananDetail::whereId($id)->first();
         $layanan_detail->update([
             'status_id' => 4,

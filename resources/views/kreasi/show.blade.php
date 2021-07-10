@@ -7,7 +7,7 @@
 <section id="services" class="services section-bg">
     <div class="container">
         <div class="section-title">
-            <a href="/kreasi"><h2>DETAIL {{$daurulang->nama}}</h2></a>
+            <a><h2>DETAIL {{$daurulang->nama}}</h2></a>
             <p>{{$daurulang->keterangan}}</p>
         </div>    
         <div class="row">
