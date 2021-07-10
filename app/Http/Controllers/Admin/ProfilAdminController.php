@@ -105,13 +105,13 @@ class ProfilAdminController extends Controller
             'email.max'=>' Email Terlalu Panjang',
             'email.unique'=>' Email Sudah Digunakan',
 
-            'alamat.required'=>' Nama Tidak Boleh Kosong',
-            'alamat.string'=>' Nama Harus Berupa String',
-            'alamat.max'=>' Nama Terlalu Panjang',
+            'alamat.required'=>' Alamat Tidak Boleh Kosong',
+            'alamat.string'=>' Alamat Harus Berupa String',
+            'alamat.max'=>' Alamat Terlalu Panjang',
 
-            'nohp.required'=>' Nama Tidak Boleh Kosong',
-            'nohp.string'=>' Nama Harus Berupa String',
-            'nohp.max'=>' Nama Terlalu Panjang',
+            'nohp.required'=>' No.HP Tidak Boleh Kosong',
+            'nohp.string'=>' No.HP Harus Berupa String',
+            'nohp.max'=>' No.HP Terlalu Panjang',
 
             'foto.required'=>' Foto tidak boleh kosong',
             'foto.max'=>' Ukuran File Terlalu Besar',

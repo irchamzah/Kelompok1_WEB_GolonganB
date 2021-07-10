@@ -52,7 +52,7 @@ class NotifikasiController extends Controller
         ];
 
         $message=[
-            'user.required'=>' Pilihan Layanan Detail tidak boleh kosong',
+            'user.required'=>' Harap pilih User terlebih dahulu',
 
             'title.required'=>' Judul tidak boleh kosong',
 
