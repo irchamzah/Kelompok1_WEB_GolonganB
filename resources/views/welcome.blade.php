@@ -43,14 +43,14 @@
 
     <div class="section-title">
       <a href="/kreasi"><h2>KREASI</h2></a>
-      <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+      <p>Kreasi adalah salah satu fitur SIPAPAH dimana isinya mengenai tutorial mendaur ulang sampah yang masih layak.</p>
     </div>
 
     <div class="row">
       <div class="col-lg-4 col-md-6">
         <div class="icon-box">
-          <div class="img-thumbnail"><img src="frontend/assets/img/portfolio/portfolio-1.jpg" class="img-fluid" alt=""></div>
-          <h4 class="title"><a href="">Tutorial membuat Tas</a></h4>
+          <div class="img-thumbnail"><img src="frontend/assets/img/portfolio/daur ulang botol.png" class="img-fluid" alt=""></div>
+          <h4 class="title"><a href="https://youtu.be/uk5CP6DnEK8">Kotak Pensil Dari Botol Bekas</a></h4>
           <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
         </div>
       </div>

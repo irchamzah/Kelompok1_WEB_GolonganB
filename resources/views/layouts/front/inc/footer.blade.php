@@ -35,7 +35,7 @@
             <h4>Sosial media</h4>
             <p>Cek Kegiatan Sipapah di Instagram yuk!</p>
             <div class="social-links mt-3">
-              <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+              <a href="https://www.instagram.com/sipapah_01/" class="instagram"><i class="bx bxl-instagram"></i></a>
             </div>
           </div>
 
