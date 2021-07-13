@@ -1,4 +1,4 @@
-@extends('layouts.templateuser')
+@extends('layouts.front.app')
 
 @section('content')
 <!-- ======= Hero Section ======= -->
