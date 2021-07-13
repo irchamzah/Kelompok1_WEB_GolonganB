@@ -10,7 +10,6 @@
         <h1>SISTEM INFORMASI PENGOLAH SAMPAH (SIPAPAH)</h1>
         <h2>Sipapah adalah aplikasi pengolah sampah kertas untuk semua kalangan yang hidup dengan tumpukan kertas. Kita harus peduli terhadap kelestarian alam untuk tidak membuang kertas bekas sembarangan. Meskipun harga kertas bekas tidak seberapa, menjual kertas bekas berarti turut menjaga kelestarian lingkungan. Cinta Alam bersama SIPAPAH.
         </h2>
-        <div><a href="#about" class="btn-get-started scrollto">Get Started</a></div>
     </div>
     <div class="col-lg-3 order-3 order-lg-2 daurulang">
         <img src="frontend/assets/img/daurulang.png" class="img-fluid" alt="">
@@ -25,13 +24,12 @@
 <!-- ======= About Section ======= -->
 <section id="about" class="about">
     <div class="container-fluid">
-        <h1>Layanan</h1>
         <div class="row">
-            <div class="col-sm-3 col-md-6 col-lg-4 pickup">
-                <img src="frontend/assets/img/kardus.png" alt="" class="img-fluid">
+            <div class="col-sm-3 col-md-6 col-lg-3 pickup">
+                <img src="frontend/assets/img/shipped.png" alt="" class="img-fluid">
             </div>
-            <div class="col-sm-9 col-md-6 col-lg-8 pick-up">
-            <h1>PickUp</h1>
+            <div class="col-sm-9 col-md-6 col-lg-9 pick-up">
+            <h1> Layanan PickUp</h1>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis asperiores quibusdam quos quo rem laborum, excepturi minima ad iste ipsam facere quasi reprehenderit aliquid reiciendis similique, adipisci tempora provident placeat!<span> <a href="#" class="layanan"></a> selengkapnya ..... </span></p>
             </div>
         </div>

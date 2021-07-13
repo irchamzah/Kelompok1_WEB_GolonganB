@@ -6,11 +6,22 @@
       <!-- Uncomment below if you prefer to use text as a logo -->
       <!-- <h1 class="logo mr-auto"><a href="index.html">Butterfly</a></h1> -->
 
+      <style>
+        .font-xl{
+            font-size: 18px;
+        }
+        .active{
+            color: #299E63!important;
+            font-weight: 600;
+        }
+    </style>
       <nav class="nav-menu d-none d-lg-block">
         <ul>
           
             <li class="nav-item">
-                <a class="nav-link" href="{{ url('/') }}">Home</a>
+                <?php $link = str_replace('/','',$_SERVER['REQUEST_URI']) ?>
+                <a class="nav-link <?php echo $link == '' ? 'active' : '' ?>" href="{{ url('/') }}">Home
+                </a>
             </li>
           
             <!-- <li><a href="{{ url('status_pesanan') }}">Status Pesanan</a></li> -->
@@ -29,22 +40,23 @@
                                 </li>
                             @endif
                         @else
-
-                        <li><a class="nav-link" href="{{ url('layanan') }}">Layanan</a></li>
-                        <li><a class="nav-link" href="{{ url('kreasi') }}">Kreasi</a></li>
-                        <li><a class="nav-link" href="{{ url('notifikasi') }}">Notifikasi</a></li>
+                        
+                        <li><a class="nav-link <?php echo $link == 'layanan' ? 'active' : '' ?>" href="{{ url('layanan') }}">Layanan</a></li>
+                        <li><a class="nav-link <?php echo $link == 'kreasi' ? 'active' : '' ?>" href="{{ url('kreasi') }}">Kreasi</a></li>
+                        
 
                             <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }}
+                                <a id="navbarDropdown" class="nav-link border dropdown-toggle" style="font-size: 13px" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    <i class="icofont-ui-user pr-1 font-xl"></i>  {{ Auth::user()->name }}
                                 </a>
 
                                 
 
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
 
                                     <a class="dropdown-item" href="{{ url('profil') }}">
-                                        Profile
+
+                                        {{ Auth::user()->name }}
                                     </a>
 
                                     <a class="dropdown-item" href="{{ route('logout') }}"
@@ -59,6 +71,10 @@
                                 </div>
                                 
                             </li>
+                            <li class="pl-2">
+                                <a class="nav-link border" href="{{ url('notifikasi') }}">
+                                    <i class="icofont-bell-alt font-xl"></i>
+                                </a></li>
                         @endguest
 
         </ul>

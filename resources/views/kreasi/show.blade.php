@@ -8,11 +8,11 @@
     <div class="container">
         <div class="section-title">
             <a><h2>DETAIL {{$daurulang->nama}}</h2></a>
-            <p>{{$daurulang->keterangan}}</p>
+            <a target="_blank" href="{{$daurulang->keterangan}}">{{$daurulang->keterangan}}</a>
         </div>    
         <div class="row">
-            <div class="img">
-                <img src="{{asset('storage/'  . $daurulang->foto)}}" class="img-fluid" alt="">
+            <div class="img text-center">
+                <a href="{{$daurulang->keterangan}}" target="_blank"><img src="{{asset('storage/'  . $daurulang->foto)}}" class="img-fluid" alt=""></a>
                 <p class="description">{{$daurulang->keterangan_detail}}</p>
             </div>
         </div>
