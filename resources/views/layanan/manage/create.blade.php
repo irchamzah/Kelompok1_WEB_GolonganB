@@ -86,7 +86,7 @@
                             <label for="nohp" class="col-md-2 col-form-label text-md-right">Keterangan</label>
 
                             <div class="col-md-6">
-                            <input type="text" class="form-control @error('keterangan') is-invalid @enderror" name="keterangan" value="{{old('keterangan')}}">
+                            <input type="text" class="form-control @error('keterangan') is-invalid @enderror" placeholder="ex: sampah bisa diambil jam 10 pagi - 1 siang" name="keterangan" value="{{old('keterangan')}}">
                             @error('keterangan')
                                 <div class="alert alert-danger">{{$message}}</div>
                             @enderror

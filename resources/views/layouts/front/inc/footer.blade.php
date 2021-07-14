@@ -26,7 +26,7 @@
             Kec. Sumbersari, <br>
             Kabupaten Jember,<br>
             Jawa Timur 68121 <br><br>
-              <strong>Phone:</strong> +6282146290446<br>
+            <a href="https://api.whatsapp.com/send?phone=+6282146290446"><strong>Phone:</strong> +6282146290446</a><br>
               <strong>Email:</strong> sipapah@gmail.com<br>
             </p>
           </div>
@@ -42,9 +42,7 @@
           <div class="col-lg-3 col-md-6 footer-links">
             <h4>Informasi</h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Bantuan</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Syarat & Ketentuan</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Kebijakan Privasi</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="https://api.whatsapp.com/send?phone=+6282146290446" target="_blank">Hubungi Kami</a></li>
             </ul>
           </div>
 
