@@ -29,17 +29,17 @@ class ProfilController extends Controller
 
         $rules=[
             'name'=>'required',
-            'foto'=>'required|max:5000|mimes:jpeg,png,jpg',
+            'foto'=>'max:5000|mimes:jpeg,png,jpg',
             'email'=>'required|email',
             'alamat'=>'required',
-            'nohp'=>'required',
+            'nohp'=>'required|numeric',
             'password'=>'confirmed',
         ];
 
         $message=[
             'name.required'=>' Nama tidak boleh kosong',
 
-            'foto.required'=>' Foto tidak boleh kosong',
+
             'foto.max'=>' Ukuran File Terlalu Besar',
             'foto.mimes'=>' File Format Harus jpeg,png,jpg',
 
@@ -48,6 +48,7 @@ class ProfilController extends Controller
             'alamat.required'=>' Alamat Lengkap tidak boleh kosong',
 
             'nohp.required'=>' No.HP tidak boleh kosong',
+            'nohp.numeric'=>' No.HP harus berupa angka saja'
         ];
         $this->validate($request,$rules,$message);
 

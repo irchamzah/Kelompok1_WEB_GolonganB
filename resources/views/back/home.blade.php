@@ -45,7 +45,7 @@
           <td>{{$layanan_detail->tanggaljemput}}</td>
           <td>{{$layanan_detail->keterangan}}</td>
           <td><strong>{{$layanan_detail->status_pesanan->name}}</strong></td>
-          <td>Rp. {{$layanan_detail->pendapatan}}</td>
+          <td>{{"Rp. ".number_format($layanan_detail->pendapatan)}}</td>
           <td>
             <div class="btn-group btn-group-vertical">
               @if ($layanan_detail->status_id == 1)
