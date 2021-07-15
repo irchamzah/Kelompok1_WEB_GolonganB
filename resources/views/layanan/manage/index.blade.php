@@ -56,7 +56,7 @@
                                         <td scope="row">{{$layanan_detail->tanggaljemput}}</td>
                                         <td scope="row">{{$layanan_detail->keterangan}}</td>
                                         <td scope="row"><STRONG>{{$layanan_detail->status_pesanan->name}}</STRONG></td>
-                                        <td scope="row">Rp. {{$layanan_detail->pendapatan}}</td>
+                                        <td scope="row">{{"Rp. ".number_format($layanan_detail->pendapatan)}}</td>
                                         <td scope="row">
                                         @if ($layanan_detail->status_id == 1)
                                         <a href="{{url('layanan/edit', $layanan_detail->id)}}" class="btn btn-primary"> EDIT </a>
