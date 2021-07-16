@@ -11,13 +11,8 @@ class Layanan extends Model
     protected $table="layanans";
 
     protected $fillable=[
-        // 'category_id',
         'user_id',
-        'status',
-        // 'file',
-        // 'tanggaljemput',
-        // 'statuspesanan',
-        // 'pendapatan',
+        'status'
     ];
 
     // public function category(){

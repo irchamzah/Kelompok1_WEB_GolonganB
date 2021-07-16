@@ -13,11 +13,12 @@ class LayananDetail extends Model
     protected $fillable=[
         'layanan_id',
         'category_id',
+        'user_id',
         'file',
         'tanggaljemput',
         'keterangan',
         'status_id',
-        'pendapatan',
+        'pendapatan'
     ];
 
     public function layanan()

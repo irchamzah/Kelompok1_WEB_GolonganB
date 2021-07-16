@@ -10,6 +10,12 @@ class Notifikasi extends Model
     use HasFactory;
     protected $table="notifikasis";
 
+    protected $fillable = [
+        'user_id', 
+        'title', 
+        'keterangan'
+    ];
+
     public function user()
     {
         return $this->belongsTo('App\Models\user', 'user_id', 'id');
