@@ -21,3 +21,8 @@ use App\Http\Controllers\Api;
 
 Route::post('login', [App\Http\Controllers\Api\UserController::class, 'login']);
 Route::post('register', [App\Http\Controllers\Api\UserController::class, 'register']);
+
+Route::get('kreasi', [App\Http\Controllers\Api\KreasiController::class, 'index']);
+
+Route::get('notifikasi', [App\Http\Controllers\Api\NotifikasiController::class, 'show']);
+Route::get('notifikasi/user/{id}', [App\Http\Controllers\Api\NotifikasiController::class, 'test']);

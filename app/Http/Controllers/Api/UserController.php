@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Notifikasi;
 use Illuminate\Support\Facades\Validator;
 
 class UserController extends Controller
@@ -19,7 +20,7 @@ class UserController extends Controller
                 return response()->json([
                     'success' => 1,
                     'message' => 'Selamat Datang '.$user->name.'!',
-                    'user' => $user
+                    'user' => $user,
                 ]);
             }
 

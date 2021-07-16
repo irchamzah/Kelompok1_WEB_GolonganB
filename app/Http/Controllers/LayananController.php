@@ -73,7 +73,9 @@ class LayananController extends Controller
 
         //mengubah nama file foto yang diupload
         $fileName=time().'.'.$request->file->extension();
-        $request->file('file')->storeAs('public', $fileName);
+        $request->file('file')->storeAs('public', $fileName);// nanti buat tempat penyimpanannya menjadi 'public/pesanan'
+
+
         
         $layanan_detail->file = $fileName;
         $layanan_detail->tanggaljemput = $request->tanggaljemput;
