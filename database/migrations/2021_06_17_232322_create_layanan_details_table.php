@@ -19,7 +19,7 @@ class CreateLayananDetailsTable extends Migration
             $table->integer('category_id');
             $table->integer('user_id');
             // $table->string('file');
-            $table->date('tanggaljemput');
+            $table->string('tanggaljemput');
             $table->string('keterangan');
             $table->string('status_id');
             $table->string('pendapatan');
