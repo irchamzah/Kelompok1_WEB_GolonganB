@@ -26,3 +26,5 @@ Route::get('kreasi', [App\Http\Controllers\Api\KreasiController::class, 'index']
 
 Route::get('notifikasi', [App\Http\Controllers\Api\NotifikasiController::class, 'show']);
 Route::get('notifikasi/user/{id}', [App\Http\Controllers\Api\NotifikasiController::class, 'test']);
+
+Route::post('layanan/pesan/{id}', [App\Http\Controllers\Api\LayananController::class, 'pesan']);

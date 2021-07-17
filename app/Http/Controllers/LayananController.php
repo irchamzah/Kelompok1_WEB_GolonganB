@@ -74,8 +74,6 @@ class LayananController extends Controller
         //mengubah nama file foto yang diupload
         $fileName=time().'.'.$request->file->extension();
         $request->file('file')->storeAs('public', $fileName);// nanti buat tempat penyimpanannya menjadi 'public/pesanan'
-
-
         
         $layanan_detail->file = $fileName;
         $layanan_detail->tanggaljemput = $request->tanggaljemput;
@@ -122,11 +120,9 @@ class LayananController extends Controller
         $this->validate($request,$rules,$message);
 
         // simpan ke database layanan detail
-        // $id_layanan_baru = Layanan::where('user_id', Auth::user()->id)->first();
         $layanan_detail = LayananDetail::whereId($id)->first();
         $layanan_detail->tanggaljemput = $request->tanggaljemput;
         $layanan_detail->keterangan = $request->keterangan;
-        // $layanan_detail->status = 0;
         if(!empty($request->category))
         {
             $layanan_detail->category_id = $request->category;
@@ -134,8 +130,6 @@ class LayananController extends Controller
 
         if(!empty($request->file))
         {
-            // $user->password = Hash::make($request->password);
-
             // menghapus file yang ada di storage
             if(\File::exists('storage/'.$layanan_detail->file))
             {
