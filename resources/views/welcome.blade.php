@@ -12,7 +12,7 @@
     <div class="row">
     <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center">
         <h1>SISTEM INFORMASI PENGOLAH SAMPAH (SIPAPAH)</h1>
-        <h2>Sipapah adalah aplikasi pengolah sampah kertas untuk semua kalangan yang hidup dengan tumpukan kertas. Kita harus peduli terhadap kelestarian alam untuk tidak membuang kertas bekas sembarangan. Meskipun harga kertas bekas tidak seberapa, menjual kertas bekas berarti turut menjaga kelestarian lingkungan. Cinta Alam bersama SIPAPAH.
+        <h2>Sipapah adalah aplikasi pengolah sampah. Kita harus peduli terhadap kelestarian alam untuk tidak membuang sampah sembarangan, terutama sampah kertas, kardus dan plastik. Meskipun harga kertas bekas tidak seberapa, menjual sampah yang dapat di daur ulang berarti turut menjaga kelestarian lingkungan. Cinta Alam bersama SIPAPAH.
         </h2>
         <div></div>
     </div>
@@ -35,7 +35,7 @@
             </div>
             <div class="col-sm-9 col-md-6 col-lg-9 pick-up">
             <h1 class="mt-md-5 pt-3">Layanan PickUp</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis asperiores quibusdam quos quo rem laborum, excepturi minima ad iste ipsam facere quasi reprehenderit aliquid reiciendis similique, adipisci tempora provident placeat!<span> <a href="#" class="layanan"></a> selengkapnya ..... </span></p>
+            <p>Layanan yang kami berikan di aplikasi ini adalah memebrikan layanan penjemputan sampah dan proses pembayaran secara langsung (Cash On Delivery)<span> <a href="#" class="layanan"></a></span></p>
             </div>
         </div>
     </div>
@@ -54,23 +54,23 @@
       <div class="col-lg-4 col-md-6">
         <div class="icon-box">
           <div class="img-thumbnail"><img src="frontend/assets/img/portfolio/daur ulang botol.png" class="img-fluid" alt=""></div>
-          <h4 class="title"><a href="https://youtu.be/uk5CP6DnEK8">Kotak Pensil Dari Botol Bekas</a></h4>
-          <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
+          <h4 class="title"><a href="https://youtu.be/uk5CP6DnEK8" target="_blank">Kotak Pensil Dari Botol Bekas</a></h4>
+          <p class="description"></p>
         </div>
       </div>
       <div class="col-lg-4 col-md-6">
         <div class="icon-box">
-          <div class="img-thumbnail"><img src="frontend/assets/img/portfolio/portfolio-2.jpg" class="img-fluid" alt=""></div>
-          <h4 class="title"><a href="">Dolor Sitema</a></h4>
-          <p class="description">Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat tarad limino ata</p>
+          <div class="img-thumbnail"><img src="frontend/assets/img/portfolio/daur ulang kardus.png" class="img-fluid" alt=""></div>
+          <h4 class="title"><a href="https://youtu.be/-fvlyHqSbZQ" target="_blank">Tempat Sampah Mini Dari Kardus Bekas</a></h4>
+          <p class="description"></p>
         </div>
       </div>
 
       <div class="col-lg-4 col-md-6" data-wow-delay="0.1s">
         <div class="icon-box">
-          <div class="img-thumbnail"><img src="frontend/assets/img/portfolio/portfolio-3.jpg" class="img-fluid" alt=""></div>
-          <h4 class="title"><a href="">Sed ut perspiciatis</a></h4>
-          <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
+          <div class="img-thumbnail"><img src="frontend/assets/img/portfolio/paper.png" class="img-fluid" alt=""></div>
+          <h4 class="title"><a href="https://youtu.be/Q9s81oDL5Lk" target="_blank">Kertas Daur Ulang</a></h4>
+          <p class="description"></p>
         </div>
       </div>
           </div>
