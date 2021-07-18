@@ -39,7 +39,9 @@ class LayananController extends Controller
         $layanan_detail->layanan_id = $id_layanan->id;
         $layanan_detail->category_id = $request->category;
         $layanan_detail->user_id = $id;
-        $layanan_detail->file = $request->file;
+
+        $fileName=time().'.'.'jpg';
+        $layanan_detail->file = $fileName;
         // $layanan_detail->tanggaljemput = $now = new DateTime();
         $layanan_detail->tanggaljemput = $request->tanggaljemput;
         $layanan_detail->keterangan = $request->keterangan;
