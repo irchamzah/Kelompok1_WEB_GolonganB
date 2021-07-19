@@ -14,6 +14,7 @@ class LayananDetail extends Model
         'layanan_id',
         'category_id',
         'user_id',
+        'file',
         'tanggaljemput',
         'keterangan',
         'status_id',
