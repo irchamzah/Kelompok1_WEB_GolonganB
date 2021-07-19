@@ -18,7 +18,8 @@ class LayananDetail extends Model
         'tanggaljemput',
         'keterangan',
         'status_id',
-        'pendapatan'
+        'pendapatan',
+        'path'
     ];
 
     public function layanan()

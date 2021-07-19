@@ -18,14 +18,20 @@ class LayananController extends Controller
     {
         //validasi input
         $validasi = Validator::make($request->all(), [
-            'category'=>'required|numeric',
-            'file'=>'required',
+            'category_id'=>'required|numeric',
             'tanggaljemput'=>'required|after:tomorrow',
             'keterangan'=>'required',
+            'path'=>'required|file',
         ]);
+
+        // if($validasi->fails()){
+        //     $val = $validasi->errors()->all();
+        //     return $this->error($val[0]);
+        // }
+
         if($validasi->fails()){
             $val = $validasi->errors()->all();
-            return $this->error($val[0]);
+            return response()->json(['success' => 0, 'message' => $val[0]]);
         }
 
         // menyimpan ke tabel layanan
@@ -33,21 +39,57 @@ class LayananController extends Controller
         $layanan->user_id = $id;
         $layanan->save();
 
-        //menyimpan ke tabel layanan detail
-        $id_layanan = Layanan::where('user_id', $id)->first();
-        $layanan_detail = new LayananDetail;
-        $layanan_detail->layanan_id = $id_layanan->id;
-        $layanan_detail->category_id = $request->category;
-        $layanan_detail->user_id = $id;
 
-        $fileName=time().'.'.'jpg';
-        $layanan_detail->file = $fileName;
+
+        if($request->path->getClientOriginalName()){
+            $ext = str_replace('', '', $request->path->getClientOriginalName());
+            $file = date('YmdHs').'.'. $ext;
+            $request->path->storeAs('public', $file);
+        }else{
+            // $file = '';
+        }
+
+        // $fileName = "woy bangke";
+
+        $id_layanan = Layanan::where('user_id', $id)->orderBy('id', 'desc')->first();
+        $layanan_id = $id_layanan->id;
+        $user_id = $id;
+        $status_id = 1;
+        $pendapatan = 0;
+
+        $mData = LayananDetail::Create(array_merge($request->all(), [
+            'layanan_id' => $layanan_id,
+            'user_id' => $user_id,
+            'file' => $file,
+            'status_id' => $status_id,
+            'pendapatan' => 0,
+        ]));
+
+        //kirim respon ke android
+        if($mData){
+            return response()->json([
+                'success' => 1,
+                'message' => 'Berhasil Memesan!',
+                'layanan' => $mData
+            ]);
+        }
+        return $this->error('Gagal Memesan');
+
+        // //menyimpan ke tabel layanan detail
+        // $id_layanan = Layanan::where('user_id', $id)->first();
+        // $layanan_detail = new LayananDetail;
+        // $layanan_detail->layanan_id = $id_layanan->id;
+        // $layanan_detail->category_id = $request->category;
+        // $layanan_detail->user_id = $id;
+
+        // $fileName=time().'.'.'jpg';
+        // $layanan_detail->file = $fileName;
         // $layanan_detail->tanggaljemput = $now = new DateTime();
-        $layanan_detail->tanggaljemput = $request->tanggaljemput;
-        $layanan_detail->keterangan = $request->keterangan;
-        $layanan_detail->status_id = 1;
-        $layanan_detail->pendapatan = 0;
-        $layanan_detail->save();
+        // $layanan_detail->tanggaljemput = $request->tanggaljemput;
+        // $layanan_detail->keterangan = $request->keterangan;
+        // $layanan_detail->status_id = 1;
+        // $layanan_detail->pendapatan = 0;
+        // $layanan_detail->save();
 
         // //menyimpan ke tabel layanan detail
         // $id_layanan = Layanan::where('user_id', $id)->first(); //ngambil id layanan
@@ -62,15 +104,7 @@ class LayananController extends Controller
         //     'pendapatan'=> 0
         // ]));
 
-        //kirim respon ke android
-        if($layanan_detail){
-            return response()->json([
-                'success' => 1,
-                'message' => 'Berhasil Memesan!',
-                'layanan' => $layanan_detail
-            ]);
-        }
-        return $this->error('Gagal Memesan');
+
     }
 
 
@@ -78,7 +112,7 @@ class LayananController extends Controller
     public function error($pesan)
     {
         return response()->json([
-            'success' => 0,
+            'Failed' => 0,
             'message' => $pesan
         ]);
     }
