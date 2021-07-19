@@ -76,6 +76,7 @@ class LayananController extends Controller
         $request->file('file')->storeAs('public', $fileName);// nanti buat tempat penyimpanannya menjadi 'public/pesanan'
         
         $layanan_detail->file = $fileName;
+        $layanan_detail->path = $fileName;
         $layanan_detail->tanggaljemput = $request->tanggaljemput;
         $layanan_detail->keterangan = $request->keterangan;
         $layanan_detail->status_id = 1;
