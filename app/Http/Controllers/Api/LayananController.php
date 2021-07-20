@@ -69,6 +69,45 @@ class LayananController extends Controller
         return $this->error('Gagal Memesan');
     }
 
+    public function update(Request $request, $id)
+    {
+        //validasi input
+        $validasi = Validator::make($request->all(), [
+            'category_id'=>'required|numeric',
+            'tanggaljemput'=>'required|after:tomorrow',
+            'keterangan'=>'required',
+            'path'=>'required|file',
+        ]);
+
+        if($validasi->fails()){
+            $val = $validasi->errors()->all();
+            return response()->json(['success' => 0, 'message' => $val[0]]);
+        }
+
+        if($request->path->getClientOriginalName()){
+            $ext = str_replace('', '', $request->path->getClientOriginalName());
+            $file = date('YmdHs').'.'. $ext;
+            $request->path->storeAs('public', $file);
+        }else{
+            // $file = '';
+        }
+
+        $mData = LayananDetail::where('id', $id)->Update(array_merge($request->all(), [
+            'file' => $file,
+            'pendapatan' => 0,
+        ]));
+
+        //kirim respon ke android
+        if($mData){
+            return response()->json([
+                'success' => 1,
+                'message' => 'Berhasil Memperbarui!',
+                // 'layanan' => $mData
+            ]);
+        }
+        return $this->error('Gagal Memesan');
+    }
+
     public function ambildata($id){
         $layanandetails = LayananDetail::with(['user'])->whereHas('user', function ($query) use ($id){
             $query->whereId($id);
@@ -79,7 +118,42 @@ class LayananController extends Controller
             'message' => 'Get data Pesanan Berhasil',
             'layanans' => collect($layanandetails)
         ]);  
+    }
 
+    public function ambildatadikonfirmasi($id){
+        $layanandetails = LayananDetail::with(['user'])->whereHas('user', function ($query) use ($id){
+            $query->whereId($id);
+        })->where('status_id', 2)->orderBy('id', 'desc')->get();
+
+        return response()->json([
+            'success' => 1,
+            'message' => 'Get data Pesanan Berhasil',
+            'layanans' => collect($layanandetails)
+        ]);  
+    }
+
+    public function ambildataselesai($id){
+        $layanandetails = LayananDetail::with(['user'])->whereHas('user', function ($query) use ($id){
+            $query->whereId($id);
+        })->where('status_id', 3)->orderBy('id', 'desc')->get();
+
+        return response()->json([
+            'success' => 1,
+            'message' => 'Get data Pesanan Berhasil',
+            'layanans' => collect($layanandetails)
+        ]);  
+    }
+
+    public function ambildataditolak($id){
+        $layanandetails = LayananDetail::with(['user'])->whereHas('user', function ($query) use ($id){
+            $query->whereId($id);
+        })->where('status_id', 4)->orderBy('id', 'desc')->get();
+
+        return response()->json([
+            'success' => 1,
+            'message' => 'Get data Pesanan Berhasil',
+            'layanans' => collect($layanandetails)
+        ]);  
     }
 
 

@@ -21,7 +21,7 @@ class NotifikasiController extends Controller
     public function test($id){
         $notifikasis = Notifikasi::with(['user'])->whereHas('user', function ($query) use ($id){
             $query->whereId($id);
-        })->get();
+        })->orderBy('id','desc')->get();
 
         return response()->json([
             'success' => 1,

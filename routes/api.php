@@ -29,3 +29,7 @@ Route::get('notifikasi/user/{id}', [App\Http\Controllers\Api\NotifikasiControlle
 
 Route::post('layanan/pesan/{id}', [App\Http\Controllers\Api\LayananController::class, 'pesan']);
 Route::get('layanan/riwayat/menunggu/{id}', [App\Http\Controllers\Api\LayananController::class, 'ambildata']);
+Route::post('layanan/riwayat/menunggu/update/{id}', [App\Http\Controllers\Api\LayananController::class, 'update']);
+Route::get('layanan/riwayat/dikonfirmasi/{id}', [App\Http\Controllers\Api\LayananController::class, 'ambildatadikonfirmasi']);
+Route::get('layanan/riwayat/selesai/{id}', [App\Http\Controllers\Api\LayananController::class, 'ambildataselesai']);
+Route::get('layanan/riwayat/ditolak/{id}', [App\Http\Controllers\Api\LayananController::class, 'ambildataditolak']);
