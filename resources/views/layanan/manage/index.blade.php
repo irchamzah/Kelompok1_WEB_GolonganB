@@ -30,12 +30,12 @@
                             <thead class="thead-dark">
                                 <tr align="center">
                                     <th scope="col">No</th>
-                                    <th scope="col">Nama User</th>
+                                    <!-- <th scope="col">Nama User</th>
                                     <th scope="col">Alamat</th>
-                                    <th scope="col">Nomor Telepon</th>
+                                    <th scope="col">Nomor Telepon</th> -->
                                     <!-- <th scope="col">ID Pesanan</th> -->
-                                    <th scope="col">Jenis Sampah</th>
                                     <th scope="col">Foto Sampah</th>
+                                    <th scope="col">Jenis Sampah</th>
                                     <th scope="col">Tanggal Jemput</th>
                                     <th scope="col">Keterangan</th>
                                     <th scope="col">Status Pesanan</th>
@@ -47,12 +47,12 @@
                                 @foreach($layanan_details as $index=>$layanan_detail)
                                     <tr align="center">
                                         <td scope="row">{{$index+1}}</td>
-                                        <td scope="row">{{$user->name}}</td>
+                                        <!-- <td scope="row">{{$user->name}}</td>
                                         <td scope="row">{{$user->alamat}}</td> 
-                                        <td scope="row">{{$user->nohp}}</td>
+                                        <td scope="row">{{$user->nohp}}</td> -->
                                         <!-- <td scope="row">{{$layanan_detail->id}}</td> -->
-                                        <td scope="row">{{$layanan_detail->category->name}}</td>
                                         <td scope="row"><button type="button" class="btn" data-toggle="modal" data-target="#myModal{{$layanan_detail->id}}"><img class="img" width="200px" src="{{asset('storage/'  . $layanan_detail->file)}}" alt=""></button></td> 
+                                        <td scope="row">{{$layanan_detail->category->name}}</td>
                                         <td scope="row">{{$layanan_detail->tanggaljemput}}</td>
                                         <td scope="row">{{$layanan_detail->keterangan}}</td>
                                         <td scope="row"><STRONG>{{$layanan_detail->status_pesanan->name}}</STRONG></td>
