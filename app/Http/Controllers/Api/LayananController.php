@@ -24,11 +24,6 @@ class LayananController extends Controller
             'path'=>'required|file',
         ]);
 
-        // if($validasi->fails()){
-        //     $val = $validasi->errors()->all();
-        //     return $this->error($val[0]);
-        // }
-
         if($validasi->fails()){
             $val = $validasi->errors()->all();
             return response()->json(['success' => 0, 'message' => $val[0]]);
@@ -49,8 +44,6 @@ class LayananController extends Controller
             // $file = '';
         }
 
-        // $fileName = "woy bangke";
-
         $id_layanan = Layanan::where('user_id', $id)->orderBy('id', 'desc')->first();
         $layanan_id = $id_layanan->id;
         $user_id = $id;
@@ -70,40 +63,22 @@ class LayananController extends Controller
             return response()->json([
                 'success' => 1,
                 'message' => 'Berhasil Memesan!',
-                'layanan' => $mData
+                // 'layanan' => $mData
             ]);
         }
         return $this->error('Gagal Memesan');
+    }
 
-        // //menyimpan ke tabel layanan detail
-        // $id_layanan = Layanan::where('user_id', $id)->first();
-        // $layanan_detail = new LayananDetail;
-        // $layanan_detail->layanan_id = $id_layanan->id;
-        // $layanan_detail->category_id = $request->category;
-        // $layanan_detail->user_id = $id;
+    public function ambildata($id){
+        $layanandetails = LayananDetail::with(['user'])->whereHas('user', function ($query) use ($id){
+            $query->whereId($id);
+        })->where('status_id', 1)->orderBy('id', 'desc')->get();
 
-        // $fileName=time().'.'.'jpg';
-        // $layanan_detail->file = $fileName;
-        // $layanan_detail->tanggaljemput = $now = new DateTime();
-        // $layanan_detail->tanggaljemput = $request->tanggaljemput;
-        // $layanan_detail->keterangan = $request->keterangan;
-        // $layanan_detail->status_id = 1;
-        // $layanan_detail->pendapatan = 0;
-        // $layanan_detail->save();
-
-        // //menyimpan ke tabel layanan detail
-        // $id_layanan = Layanan::where('user_id', $id)->first(); //ngambil id layanan
-        // $layanan = LayananDetail::create(array_merge($request->all(), [
-        //     'layanan_id' => $id_layanan,
-        //     'category_id' => $request->category,
-        //     'user_id' => $id,
-        //     'file'=> $request->file,
-        //     // 'tanggaljemput'=> $request->tanggaljemput,
-        //     'keterangan'=> $request->keterangan,
-        //     'status_id'=> 1,
-        //     'pendapatan'=> 0
-        // ]));
-
+        return response()->json([
+            'success' => 1,
+            'message' => 'Get data Pesanan Berhasil',
+            'layanans' => collect($layanandetails)
+        ]);  
 
     }
 
@@ -112,7 +87,7 @@ class LayananController extends Controller
     public function error($pesan)
     {
         return response()->json([
-            'Failed' => 0,
+            'success' => 0,
             'message' => $pesan
         ]);
     }

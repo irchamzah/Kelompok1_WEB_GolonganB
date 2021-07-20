@@ -39,7 +39,7 @@
     ======================================================= -->
 </head>
 
-<body class="login-img3-body">
+<body class="">
 
   <div class="container">
   @if (Session::has('success'))

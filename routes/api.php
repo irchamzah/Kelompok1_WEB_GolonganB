@@ -28,3 +28,4 @@ Route::get('notifikasi', [App\Http\Controllers\Api\NotifikasiController::class, 
 Route::get('notifikasi/user/{id}', [App\Http\Controllers\Api\NotifikasiController::class, 'test']);
 
 Route::post('layanan/pesan/{id}', [App\Http\Controllers\Api\LayananController::class, 'pesan']);
+Route::get('layanan/riwayat/menunggu/{id}', [App\Http\Controllers\Api\LayananController::class, 'ambildata']);
