@@ -23,6 +23,7 @@ class User extends Authenticatable
         'foto',
         'alamat',
         'nohp',
+        'path',
     ];
 
     /**

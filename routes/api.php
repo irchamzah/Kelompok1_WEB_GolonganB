@@ -21,6 +21,7 @@ use App\Http\Controllers\Api;
 
 Route::post('login', [App\Http\Controllers\Api\UserController::class, 'login']);
 Route::post('register', [App\Http\Controllers\Api\UserController::class, 'register']);
+Route::post('profil/edit/{id}', [App\Http\Controllers\Api\UserController::class, 'edit']);
 
 Route::get('kreasi', [App\Http\Controllers\Api\KreasiController::class, 'index']);
 

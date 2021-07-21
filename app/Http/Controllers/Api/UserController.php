@@ -65,6 +65,52 @@ class UserController extends Controller
 
     }
 
+    public function edit(Request $request, $id)
+    {
+        //validasi input
+        $validasi = Validator::make($request->all(), [
+            'name'=>'required',
+            'email'=>'required|unique:users,email,'.$id,
+            'alamat'=>'required',
+            'nohp'=>'required|numeric',
+        ]);
+
+        if($validasi->fails()){
+            $val = $validasi->errors()->all();
+            return response()->json(['success' => 0, 'message' => $val[0]]);
+        }
+
+        $user = User::where('id', $id)->first();
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->alamat = $request->alamat;
+        $user->nohp = $request->nohp;
+        if(!empty($request->password))
+        {
+            $user->password = bcrypt($request->password);
+        }
+        if(!empty($request->path->getClientOriginalName()))
+        {
+            if(\File::exists('storage/'.$user->foto)){
+                \File::delete('storage/'.$user->foto);
+            }
+            $ext = str_replace('', '', $request->path->getClientOriginalName());
+            $filename = date('YmdHs').'.'. $ext;
+            $request->path->storeAs('public', $filename);
+            $user->foto = $filename;
+        }
+        $user->update();
+
+        //kirim respon ke android
+        if($user){
+            return response()->json([
+                'success' => 1,
+                'message' => 'Berhasil Memperbarui Profil!',
+            ]);
+        }
+        return $this->error('Gagal Memesan');
+    }
+
 
     public function error($pesan)
     {
