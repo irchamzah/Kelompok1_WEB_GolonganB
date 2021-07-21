@@ -11,7 +11,7 @@
   <div class="container">
 
     <h2>TABEL KREASI</h2>
-    <p>The .thead-dark class adds a black background to table headers, and the .thead-light class adds a grey background to table headers:</p>
+    <p></p>
     <a href="{{route('admin.kreasi.create')}}" class="btn btn-primary">TAMBAH TUTORIAL</a>
     <form action="/admin/kreasi" method="get" class="form-inline my-2 my-lg-0">
       <input type="search" name="cari" placeholder="Cari NAMA TUTORIAL" aria-label="Search" class="form-control mr-sm-2">
@@ -20,14 +20,14 @@
     <table class="table">
       <thead class="thead-dark">
         <tr>
-          <th>No</th>
+          <th scope="col">No</th>
           <!-- <th>Id User</th> -->
-          <th>Nama Tutorial</th>
-          <th>Foto Utama</th>
-          <th>Keterangan</th>
-          <th>Penjelasan Detail</th>
-          <th>Dibuat Pada</th>
-          <th>Aksi</th>
+          <th scope="col">Nama Tutorial</th>
+          <th scope="col">Foto Utama</th>
+          <th scope="col">Keterangan</th>
+          <th scope="col">Penjelasan Detail</th>
+          <th scope="col">Dibuat Pada</th>
+          <th scope="col">Aksi</th>
         </tr>
       </thead>
       <tbody>

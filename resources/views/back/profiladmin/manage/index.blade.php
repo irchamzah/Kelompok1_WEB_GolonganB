@@ -10,7 +10,7 @@
 
   <div class="container">
     <h2>TABEL ADMIN</h2>
-    <p>The .thead-dark class adds a black background to table headers, and the .thead-light class adds a grey background to table headers:</p>
+    <p></p>
     <a href="{{route('admin.profiladmin.register')}}" class="btn btn-primary">TAMBAH AKUN ADMIN</a><br>
     <form action="/admin/profilAdmin" method="get" class="form-inline my-2 my-lg-0">
       <input type="search" name="cari" placeholder="Cari NAMA ADMIN" aria-label="Search" class="form-control mr-sm-2">

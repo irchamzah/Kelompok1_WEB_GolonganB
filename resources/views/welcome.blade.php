@@ -35,7 +35,7 @@
             </div>
             <div class="col-sm-9 col-md-6 col-lg-9 pick-up">
             <h1 class="mt-md-5 pt-3">Layanan PickUp</h1>
-            <p>Layanan yang kami berikan di aplikasi ini adalah memebrikan layanan penjemputan sampah dan proses pembayaran secara langsung (Cash On Delivery)<span> <a href="#" class="layanan"></a></span></p>
+            <p>Layanan yang kami berikan di aplikasi ini adalah memberikan layanan penjemputan sampah dan proses pembayaran secara langsung (Cash On Delivery)<span> <a href="#" class="layanan"></a></span></p>
             </div>
         </div>
     </div>
