@@ -130,7 +130,7 @@ class LayananController extends Controller
         if($layanan_detail){
             return response()->json([
                 'success' => 1,
-                'message' => 'Berhasil Menghapus Pesanan!',
+                'message' => 'Berhasil Membatalkan Pesanan!',
             ]);
         }
         return $this->error('Gagal Memesan');
