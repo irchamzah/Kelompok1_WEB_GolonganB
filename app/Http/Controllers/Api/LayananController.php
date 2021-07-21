@@ -108,6 +108,62 @@ class LayananController extends Controller
         return $this->error('Gagal Memesan');
     }
 
+    public function hapus(Request $request, $id)
+    {
+
+        $validasi = Validator::make($request->all(), [
+            // 'file'=>'required',
+        ]);
+
+        if($validasi->fails()){
+            $val = $validasi->errors()->all();
+            return response()->json(['success' => 0, 'message' => $val[0]]);
+        }
+
+        $layanan_detail = LayananDetail::whereId($id)->first();
+        if(\File::exists('storage/'.$request->file)){
+            \File::delete('storage/'.$request->file);
+        }
+        LayananDetail::whereId($id)->delete();
+
+        //kirim respon ke android
+        if($layanan_detail){
+            return response()->json([
+                'success' => 1,
+                'message' => 'Berhasil Menghapus Pesanan!',
+            ]);
+        }
+        return $this->error('Gagal Memesan');
+    }
+
+    public function selesaihapus(Request $request, $id)
+    {
+
+        $validasi = Validator::make($request->all(), [
+            // 'file'=>'required',
+        ]);
+
+        if($validasi->fails()){
+            $val = $validasi->errors()->all();
+            return response()->json(['success' => 0, 'message' => $val[0]]);
+        }
+
+        $layanan_detail = LayananDetail::whereId($id)->first();
+        if(\File::exists('storage/'.$request->file)){
+            \File::delete('storage/'.$request->file);
+        }
+        LayananDetail::whereId($id)->delete();
+
+        //kirim respon ke android
+        if($layanan_detail){
+            return response()->json([
+                'success' => 1,
+                'message' => 'Berhasil Menghapus Pesanan!',
+            ]);
+        }
+        return $this->error('Gagal Memesan');
+    }
+
     public function ambildata($id){
         $layanandetails = LayananDetail::with(['user'])->whereHas('user', function ($query) use ($id){
             $query->whereId($id);
