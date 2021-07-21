@@ -11,7 +11,7 @@
   <div class="container">
 
     <h2>TABEL NOTIFIKASI</h2>
-    <p>The .thead-dark class adds a black background to table headers, and the .thead-light class adds a grey background to table headers:</p>
+    <p></p>
     <a href="{{route('admin.notifikasi.create')}}" class="btn btn-primary">BUAT NOTIFIKASI</a>
     <form action="/admin/notifikasi" method="get" class="form-inline my-2 my-lg-0">
       <input type="search" name="cari" placeholder="Cari JUDUL NOTIFIKASI" aria-label="Search" class="form-control mr-sm-2">
