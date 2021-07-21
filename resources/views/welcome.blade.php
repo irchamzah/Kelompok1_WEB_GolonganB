@@ -12,7 +12,7 @@
     <div class="row">
     <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center">
         <h1>SISTEM INFORMASI PENGOLAH SAMPAH (SIPAPAH)</h1>
-        <h2>Sipapah adalah aplikasi pengolah sampah. Kita harus peduli terhadap kelestarian alam untuk tidak membuang sampah sembarangan, terutama sampah kertas, kardus dan plastik. Meskipun harga kertas bekas tidak seberapa, menjual sampah yang dapat di daur ulang berarti turut menjaga kelestarian lingkungan. Cinta Alam bersama SIPAPAH.
+        <h2>Sipapah adalah aplikasi pengolah sampah. Kita harus peduli terhadap kelestarian alam untuk tidak membuang sampah sembarangan, terutama sampah kertas, kardus dan plastik. Meskipun harga kertas bekas tidak seberapa, menjual sampah yang dapat di daur ulang berarti turut menjaga kelestarian lingkungan. Mari cintai Alam bersama SIPAPAH.
         </h2>
         <div></div>
     </div>
