@@ -75,7 +75,7 @@
             <img src="IMG/HOME/ekonomi.png" class="img-fluid" alt="">
             <div class="portfolio-info">
               <h4>Ekonomi</h4>
-              <p>Polusi sampah plastik menimbulkan kerugian ekonomi yang tidak sedikit, dan bersekala global. Sipapah mengubah sampahmu menjadi mata uang. Membawa ekonomi sirkular sekaligus inklusi ekonomi bagi semua orang.</p>
+              <p>Polusi sampah plastik menimbulkan kerugian ekonomi yang tidak sedikit, dan berskala global. Sipapah mengubah sampahmu menjadi mata uang. Membawa ekonomi sirkular sekaligus inklusi ekonomi bagi semua orang.</p>
             </div>
           </div>
         </div>
