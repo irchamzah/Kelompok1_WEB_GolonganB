@@ -1,110 +1,249 @@
 @extends('layouts.front.app')
 @section('content')
-<br>
-<br>
-<br>
-<section id="services" class="services section-bg">
-<div class="container">
-    <div class="row">
-        <div class="col-md-15">
-            <h1 class="mt-4">JUAL SAMPAH</h1>
-            <div class="col-md-12">
-            @if(Session::has('success'))
-                            <div class="alert alert-success" role="alert">
-                                {{Session::get('success')}}
+
+<section id="hero" class="d-flex align-items-center">
+    <div class="container">
+
+        <div class="section-title">
+            <!-- <h2>Bergabunglah Bersama Kami!</h2> -->
+        </div>
+
+        <div>
+            <img style="border:0; width: 100%; " src="IMG/HOME/bergabung2.png" frameborder="0" allowfullscreen></img>
+        </div>
+
+    </div>
+</section>
+
+<section id="services" class="about">
+    <div class="container">
+
+        <div class="row">
+            <div class="col-xl-5 col-lg-6 d-flex justify-content-center video-box align-items-stretch position-relative">
+                <a class="glightbox play-btn mb-4">
+                    <img src="IMG/HOME/recycle.png" class="img-fluid" alt="">
+                </a>
+            </div>
+
+            <div class="col-xl-7 col-lg-6 icon-boxes d-flex flex-column align-items-stretch justify-content-center py-5 px-lg-5">
+                <!-- START ACCORDION & CAROUSEL-->
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">Cara Memesan</h3>
                             </div>
-                        @endif
-                <div class="card">
-                    <div class="card-body">
-                    @if (empty($user->alamat))
-                        <button type="button" class="btn btn-secondary" disabled>BUAT PESANAN BARU</button>
-                        <font class="alert alert-danger" size="2">Harap Lengkapi Data Profil Terlebih Dahulu Sebelum Memesan! <a href="{{url('/profil')}}">Lengkapi Data Disini!</a></font>
-                    @elseif(empty($user->nohp))
-                        <button type="button" class="btn btn-secondary" disabled>BUAT PESANAN BARU</button>
-                        <font class="alert alert-danger" size="2">Harap Lengkapi Data Profil Terlebih Dahulu Sebelum Memesan! <a href="{{url('/profil')}}">Lengkapi Data Disini!</a></font>
-                    @else
-                        <a href="{{ url('/layanan/create', $user->id)}}" class="btn btn-primary"> BUAT PESANAN BARU </a>
-                    @endif
-                        <h4>Daftar Riwayat Pesanan</h4><hr>
-                        <table class="table table-sm">
-                            <thead class="thead-dark">
-                                <tr align="center">
-                                    <th scope="col">No</th>
-                                    <!-- <th scope="col">Nama User</th>
-                                    <th scope="col">Alamat</th>
-                                    <th scope="col">Nomor Telepon</th> -->
-                                    <!-- <th scope="col">ID Pesanan</th> -->
-                                    <th scope="col">Foto Sampah</th>
-                                    <th scope="col">Jenis Sampah</th>
-                                    <th scope="col">Tanggal Jemput</th>
-                                    <th scope="col">Keterangan</th>
-                                    <th scope="col">Status Pesanan</th>
-                                    <th scope="col">Pendapatan</th>
-                                    <th scope="col"></th>
-                                </tr>
-                            </thead>
-                            <body>
-                                @foreach($layanan_details as $index=>$layanan_detail)
-                                    <tr align="center">
-                                        <td scope="row">{{$index+1}}</td>
-                                        <!-- <td scope="row">{{$user->name}}</td>
-                                        <td scope="row">{{$user->alamat}}</td> 
-                                        <td scope="row">{{$user->nohp}}</td> -->
-                                        <!-- <td scope="row">{{$layanan_detail->id}}</td> -->
-                                        <td scope="row"><button type="button" class="btn" data-toggle="modal" data-target="#myModal{{$layanan_detail->id}}"><img class="img" width="200px" src="{{asset('storage/'  . $layanan_detail->file)}}" alt=""></button></td> 
-                                        <td scope="row">{{$layanan_detail->category->name}}</td>
-                                        <td scope="row">{{$layanan_detail->tanggaljemput}}</td>
-                                        <td scope="row">{{$layanan_detail->keterangan}}</td>
-                                        <td scope="row"><STRONG>{{$layanan_detail->status_pesanan->name}}</STRONG></td>
-                                        <td scope="row">{{"Rp. ".number_format($layanan_detail->pendapatan)}}</td>
-                                        <td scope="row">
-                                        @if ($layanan_detail->status_id == 1)
-                                        <a href="{{url('layanan/edit', $layanan_detail->id)}}" class="btn btn-primary"> EDIT </a>
-                                        <a href="{{url('layanan/delete', $layanan_detail->id)}}" class="btn btn-danger" onclick="return confirm('Anda yakin akan menghapus data ?');"><font size="2"> BATALKAN PESANAN </font></a>
-                                        @elseif ($layanan_detail->status_id == 2)
-                                        <font><a href="{{url('/notifikasi')}}" class="btn btn-success"> PERIKSA PESANAN </a></font>
-                                        @elseif ($layanan_detail->status_id == 3)
-                                        <a href="{{url('layanan/delete', $layanan_detail->id)}}" class="btn btn-danger" onclick="return confirm('Anda yakin akan menghapus data ?');"> DELETE </a>
-                                        @else ($layanan_detail->status_id == 4)
-                                        <font><a href="{{url('/notifikasi')}}" class="btn btn-secondary"> PERIKSA PESANAN </a></font>
-                                        <a href="{{url('layanan/delete', $layanan_detail->id)}}" class="btn btn-danger" onclick="return confirm('Anda yakin akan menghapus data ?');"> DELETE </a>
-                                        @endif
-                                        </td>
-                                    </tr>
-
-                                    <!-- The Modal -->
-                                    <div class="modal fade" id="myModal{{$layanan_detail->id}}">
-                                    <div class="modal-dialog modal-xl">
-                                        <div class="modal-content">
-
-                                        <!-- Modal Header -->
-                                        <div class="modal-header">
-                                            <h4 class="modal-title">Gambar Diperbesar</h4>
-                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <!-- /.card-header -->
+                            <div class="card-body">
+                                <!-- we are adding the accordion ID so Bootstrap's collapse plugin detects it -->
+                                <div id="accordion">
+                                    <div class="card card-primary">
+                                        <div class="card-header">
+                                            <h4 class="card-title w-100">
+                                                <a class="d-block w-100" data-toggle="collapse" href="#collapseOne">
+                                                    Collapsible Group Item #1
+                                                </a>
+                                            </h4>
                                         </div>
-
-                                        <!-- Modal body -->
-                                        <div class="modal-body" align="center">
-                                        <img class="img" width="1000px" src="{{asset('storage/'  . $layanan_detail->file)}}" alt="" >
-                                        </div>
-
-                                        <!-- Modal footer -->
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                                        </div>
-
+                                        <div id="collapseOne" class="collapse show" data-parent="#accordion">
+                                            <div class="card-body">
+                                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.
+                                                3
+                                                wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt
+                                                laborum
+                                                eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee
+                                                nulla
+                                                assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred
+                                                nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft
+                                                beer
+                                                farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus
+                                                labore sustainable VHS.
+                                            </div>
                                         </div>
                                     </div>
+                                    <div class="card card-danger">
+                                        <div class="card-header">
+                                            <h4 class="card-title w-100">
+                                                <a class="d-block w-100" data-toggle="collapse" href="#collapseTwo">
+                                                    Collapsible Group Danger
+                                                </a>
+                                            </h4>
+                                        </div>
+                                        <div id="collapseTwo" class="collapse" data-parent="#accordion">
+                                            <div class="card-body">
+                                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.
+                                                3
+                                                wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt
+                                                laborum
+                                                eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee
+                                                nulla
+                                                assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred
+                                                nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft
+                                                beer
+                                                farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus
+                                                labore sustainable VHS.
+                                            </div>
+                                        </div>
                                     </div>
-                                @endforeach 
-                            </body>
-                        </table>
+                                    <div class="card card-success">
+                                        <div class="card-header">
+                                            <h4 class="card-title w-100">
+                                                <a class="d-block w-100" data-toggle="collapse" href="#collapseThree">
+                                                    Collapsible Group Success
+                                                </a>
+                                            </h4>
+                                        </div>
+                                        <div id="collapseThree" class="collapse" data-parent="#accordion">
+                                            <div class="card-body">
+                                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.
+                                                3
+                                                wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt
+                                                laborum
+                                                eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee
+                                                nulla
+                                                assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred
+                                                nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft
+                                                beer
+                                                farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus
+                                                labore sustainable VHS.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /.card-body -->
+                        </div>
+                        <!-- /.card -->
                     </div>
+                    <!-- /.col -->
                 </div>
+                <!-- /.row -->
+                <!-- END ACCORDION & CAROUSEL-->
+
             </div>
         </div>
-    </div>
-</div>
 
-</section>
+    </div>
+</section><!-- End About Section -->
+
+
+
+
+
+
+
+
+
+
+
+<!-- ======= Portfolio Section ======= -->
+<section id="portfolio" class="portfolio">
+
+    <div class="section-title">
+        <h2>Riwayat Pesanan</h2>
+    </div>
+
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+
+                <h3 class="card-title">
+                    @if (empty($user->alamat))
+                    <button type="button" class="btn btn-secondary" disabled>BUAT PESANAN BARU</button>
+                    <font class="alert alert-danger" size="2">Harap Lengkapi Data Profil Terlebih Dahulu Sebelum Memesan! <a href="{{url('/profil')}}">Lengkapi Data Disini!</a></font>
+                    @elseif(empty($user->nohp))
+                    <button type="button" class="btn btn-secondary" disabled>BUAT PESANAN BARU</button>
+                    <font class="alert alert-danger" size="2">Harap Lengkapi Data Profil Terlebih Dahulu Sebelum Memesan! <a href="{{url('/profil')}}">Lengkapi Data Disini!</a></font>
+                    @else
+                    <a href="{{ url('/layanan/create', $user->id)}}" class="btn btn-primary"> BUAT PESANAN BARU </a>
+                    @endif
+                </h3>
+            </div>
+            <!-- /.card-header -->
+            <div class="card-body">
+                <table class="table table-bordered">
+                    <thead>
+
+                        <tr>
+                            <th style="width: 10px">No</th>
+                            <th>Foto Sampah</th>
+                            <th>Jenis Sampah</th>
+                            <th>Tanggal Jemput</th>
+                            <th>Keterangan</th>
+                            <th>Status Pesanan</th>
+                            <th>Pendapatan</th>
+                            <th style="width: 40px">Label</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach($layanan_details as $index=>$layanan_detail)
+                        <tr>
+                            <td scope="row">{{$index+1}}</td>
+                            <td scope="row"><button type="button" class="btn" data-toggle="modal" data-target="#myModal{{$layanan_detail->id}}"><img class="img" width="200px" src="{{asset('storage/'  . $layanan_detail->file)}}" alt=""></button></td>
+                            <td scope="row">{{$layanan_detail->category->name}}</td>
+                            <td scope="row">{{$layanan_detail->tanggaljemput}}</td>
+                            <td scope="row">{{$layanan_detail->keterangan}}</td>
+                            <td scope="row"><STRONG>{{$layanan_detail->status_pesanan->name}}</STRONG></td>
+                            <td scope="row">{{"Rp. ".number_format($layanan_detail->pendapatan)}}</td>
+                            <td scope="row">
+                                @if ($layanan_detail->status_id == 1)
+                                <a href="{{url('layanan/edit', $layanan_detail->id)}}" class="btn btn-primary"> EDIT </a>
+                                <a href="{{url('layanan/delete', $layanan_detail->id)}}" class="btn btn-danger" onclick="return confirm('Anda yakin akan menghapus data ?');">
+                                    <font size="2"> BATALKAN PESANAN </font>
+                                </a>
+                                @elseif ($layanan_detail->status_id == 2)
+                                <font><a href="{{url('/notifikasi')}}" class="btn btn-success"> PERIKSA PESANAN </a></font>
+                                @elseif ($layanan_detail->status_id == 3)
+                                <a href="{{url('layanan/delete', $layanan_detail->id)}}" class="btn btn-danger" onclick="return confirm('Anda yakin akan menghapus data ?');"> DELETE </a>
+                                @else ($layanan_detail->status_id == 4)
+                                <font><a href="{{url('/notifikasi')}}" class="btn btn-secondary"> PERIKSA PESANAN </a></font>
+                                <a href="{{url('layanan/delete', $layanan_detail->id)}}" class="btn btn-danger" onclick="return confirm('Anda yakin akan menghapus data ?');"> DELETE </a>
+                                @endif
+                            </td>
+                            <!-- <td><span class="badge bg-danger">55%</span></td> -->
+                        </tr>
+
+                        <!-- The Modal -->
+                        <div class="modal fade" id="myModal{{$layanan_detail->id}}">
+                            <div class="modal-dialog modal-xl">
+                                <div class="modal-content">
+
+                                    <!-- Modal Header -->
+                                    <div class="modal-header">
+                                        <h4 class="modal-title">Gambar Diperbesar</h4>
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    </div>
+
+                                    <!-- Modal body -->
+                                    <div class="modal-body" align="center">
+                                        <img class="img" width="1000px" src="{{asset('storage/'  . $layanan_detail->file)}}" alt="">
+                                    </div>
+
+                                    <!-- Modal footer -->
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        @endforeach
+
+                    </tbody>
+                </table>
+            </div>
+            <!-- /.card-body -->
+            <!-- <div class="card-footer clearfix">
+                <ul class="pagination pagination-sm m-0 float-right">
+                    <li class="page-item"><a class="page-link" href="#">&laquo;</a></li>
+                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item"><a class="page-link" href="#">&raquo;</a></li>
+                </ul>
+            </div> -->
+        </div>
+        <!-- /.card -->
+</section><!-- End Portfolio Section -->
+
 @endsection
