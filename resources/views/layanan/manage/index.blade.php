@@ -9,7 +9,7 @@
         </div>
 
         <div>
-            <img style="border:0; width: 100%; " src="IMG/HOME/bergabung2.png" frameborder="0" allowfullscreen></img>
+            <img style="border:0; width: 100%; padding:50px;" src="IMG/HOME/imgLayanan.png" frameborder="0" allowfullscreen></img>
         </div>
 
     </div>
@@ -245,5 +245,4 @@
         </div>
         <!-- /.card -->
 </section><!-- End Portfolio Section -->
-
 @endsection

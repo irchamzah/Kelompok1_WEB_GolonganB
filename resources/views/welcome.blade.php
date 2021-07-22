@@ -106,7 +106,7 @@
       </div>
 
       <div>
-        <img style="border:0; width: 100%; " src="IMG/HOME/bergabung2.png" frameborder="0" allowfullscreen></img>
+        <img style="border:0; width: 100%; " src="IMG/HOME/imgHome.png" frameborder="0" allowfullscreen></img>
       </div>
 
     </div>
