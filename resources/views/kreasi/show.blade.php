@@ -1,24 +1,31 @@
 @extends('layouts.front.app')
 @section('content')
 
-<br>
-<br>
-<br>
-<section id="services" class="services section-bg">
-    <div class="container">
-        <div class="section-title">
-            <a><h2>DETAIL {{$daurulang->nama}}</h2></a>
-            <a target="_blank" href="{{$daurulang->keterangan}}">{{$daurulang->keterangan}}</a>
-        </div>    
-        <div class="row">
-            <div class="img text-center">
-                <a href="{{$daurulang->keterangan}}" target="_blank"><img src="{{asset('storage/'  . $daurulang->foto)}}" class="img-fluid" alt=""></a>
-                <p class="description">{{$daurulang->keterangan_detail}}</p>
+<br><br><br>
+
+<main>
+    <section id="contact" class="contact">
+        <div class="container">
+
+            <!-- Profile Image -->
+            <div class="card card-primary card-outline">
+                <div class="card-body box-profile">
+                    <div class="text-center">
+                        <img class="profile-user-img img-fluid img-circle" src="{{asset('storage/'  . $daurulang->foto)}}" alt="User profile picture">
+                    </div>
+                    <hr>
+
+                    <h3 class="profile-username text-center">{{$daurulang->nama}}</h3>
+                    <hr>
+
+                    <h4 class="text-muted">{{$daurulang->keterangan}}</h4>
+                    <hr>
+                    <p class="text-muted">{{$daurulang->keterangan_detail}}</p>
+                </div>
+                <!-- /.card-body -->
             </div>
         </div>
-    </div>
-</section>
-
+    </section>
 </main>
 
 @endsection
