@@ -58,9 +58,9 @@
                                     {{ __('Login') }}
                                 </button>
 
-                                <a class="btn btn-link" href="{{ url('/admin') }}">
+                                <!-- <a class="btn btn-link" href="{{ url('/admin') }}">
                                     <font size="2"> Login Sebagai Admin </font>
-                                </a>
+                                </a> -->
 
                                 <!-- @if (Route::has('password.request'))
                                     <a class="btn btn-link" href="{{ route('password.request') }}">
