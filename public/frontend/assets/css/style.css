@@ -429,12 +429,12 @@ section {
     text-transform: uppercase;
     margin-bottom: 20px;
     padding-bottom: 0;
-    color: #ffffff;
+    color: #263238;
 }
 
 .section-title p {
     margin-bottom: 0;
-    color: rgb(255, 255, 255);
+    color: #263238;
 }
 
 /*--------------------------------------------------------------
@@ -442,7 +442,7 @@ section {
 --------------------------------------------------------------*/
 #about {
     width: 100%;
-    height: 90vh;
+    height: 60vh;
     background-color: white;
     margin-bottom: 30px;
 }
@@ -827,7 +827,7 @@ section {
 
 .portfolio .portfolio-wrap::before {
     content: "";
-    background: rgba(255, 255, 255, 0.6);
+    background: #299E63;
     position: absolute;
     left: 30px;
     right: 30px;
@@ -852,6 +852,7 @@ section {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    height: 100;
 }
 
 .portfolio .portfolio-wrap .portfolio-info::before {
@@ -884,14 +885,14 @@ section {
 
 .portfolio .portfolio-wrap .portfolio-info h4 {
     font-size: 20px;
-    color: #0f394c;
+    color: #ffffff;
     font-weight: 600;
 }
 
 .portfolio .portfolio-wrap .portfolio-info p {
-    color: #0f394c;
+    color: #ffffff;
     font-size: 14px;
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
     padding: 0;
     margin: 0;
 }
