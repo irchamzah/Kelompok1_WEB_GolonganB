@@ -42,7 +42,7 @@
           <div class="col-lg-3 col-md-6 footer-links">
             <h4>Informasi</h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="https://api.whatsapp.com/send?phone=+6282146290446" target="_blank">Hubungi Kami</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="https://api.whatsapp.com/send?phone=+6282146290446" target="_blank">Kontak Kami</a></li>
             </ul>
           </div>
 
