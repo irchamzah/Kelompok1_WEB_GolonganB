@@ -36,7 +36,7 @@
                                     </div>
                                     <div class="col-5 text-center">
                                         <a href="{{url('kreasi/detail', $daurulang->id)}}">
-                                            <img src="{{asset('storage/'  . $daurulang->foto)}}" alt="user-avatar" class="img-circle img-fluid">
+                                            <img src="{{asset('img/fotokreasi').'/'.$daurulang->foto}}" alt="user-avatar" class="img-circle img-fluid">
                                         </a>
                                     </div>
                                 </div>

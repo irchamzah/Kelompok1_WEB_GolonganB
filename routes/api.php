@@ -19,6 +19,8 @@ use App\Http\Controllers\Api;
 //     return $request->user();
 // });
 
+
+
 Route::post('login', [App\Http\Controllers\Api\UserController::class, 'login']);
 Route::post('register', [App\Http\Controllers\Api\UserController::class, 'register']);
 Route::post('profil/edit/{id}', [App\Http\Controllers\Api\UserController::class, 'edit']);

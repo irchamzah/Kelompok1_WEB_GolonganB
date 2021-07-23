@@ -61,7 +61,7 @@ class KreasiController extends Controller
         $daurulang->nama = $request->nama;
         //mengubah nama file foto yang diupload
         $fileName=time().'.'.$request->foto->extension();
-        $request->file('foto')->storeAs('public', $fileName);
+        $request->file('foto')->move(public_path('img/fotokreasi'), $fileName);
         $daurulang->foto = $fileName;
         $daurulang->keterangan = $request->keterangan;
         $daurulang->keterangan_detail = $request->keterangan_detail;
@@ -104,12 +104,12 @@ class KreasiController extends Controller
         $daurulang->nama = $request->nama;
         if(!empty($request->foto))
         {
-            if(\File::exists('storage/'.$daurulang->foto))
+            if(\File::exists(public_path('img/fotokreasi/').$daurulang->foto))
             {
-                \File::delete('storage/'.$daurulang->foto);
+                \File::delete(public_path('img/fotokreasi/').$daurulang->foto);
             }
             $fileName=time().'.'.$request->foto->extension();
-            $request->file('foto')->storeAs('public', $fileName);
+            $request->file('foto')->move(public_path('img/fotokreasi'), $fileName);
             $daurulang->foto = $fileName;
         }
         $daurulang->keterangan = $request->keterangan;
@@ -122,8 +122,8 @@ class KreasiController extends Controller
     public function destroy($id)
     {
         $daurulang = Daurulang::whereId($id)->first();
-        if(\File::exists('storage/'.$daurulang->foto)){
-            \File::delete('storage/'.$daurulang->foto);
+        if(\File::exists(public_path('img/fotokreasi/').$daurulang->foto)){
+            \File::delete(public_path('img/fotokreasi/').$daurulang->foto);
         }
         Daurulang::whereId($id)->delete();
         return back()->with('success', 'Hapus data sukses!');

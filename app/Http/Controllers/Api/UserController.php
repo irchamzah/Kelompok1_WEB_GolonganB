@@ -70,7 +70,7 @@ class UserController extends Controller
         //validasi input
         $validasi = Validator::make($request->all(), [
             'name'=>'required',
-            'email'=>'required|unique:users,email,'.$id,
+            'email'=>'required|email',
             'alamat'=>'required',
             'nohp'=>'required|numeric',
         ]);
@@ -91,12 +91,12 @@ class UserController extends Controller
         }
         if(!empty($request->path->getClientOriginalName()))
         {
-            if(\File::exists('storage/'.$user->foto)){
-                \File::delete('storage/'.$user->foto);
+            if(\File::exists(public_path('img/fotoprofil/').$user->foto)){
+                \File::delete(public_path('img/fotoprofil/').$user->foto);
             }
             $ext = str_replace('', '', $request->path->getClientOriginalName());
             $filename = date('YmdHs').'.'. $ext;
-            $request->path->storeAs('public', $filename);
+            $request->path->move(public_path('img/fotoprofil'), $filename);
             $user->foto = $filename;
         }
         $user->update();

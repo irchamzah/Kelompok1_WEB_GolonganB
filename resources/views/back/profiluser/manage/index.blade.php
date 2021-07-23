@@ -43,7 +43,7 @@
             <td>{{$user->email}}</td>
             <td>{{$user->alamat}}</td>
             <td>{{$user->nohp}}</td>
-            <td scope="row"><button type="button" class="btn" data-toggle="modal" data-target="#myModal{{$user->id}}"><img class="img" width="200px" src="{{asset('storage/'  . $user->foto)}}" alt=""></button></td>
+            <td scope="row"><button type="button" class="btn" data-toggle="modal" data-target="#myModal{{$user->id}}"><img class="img" width="200px" src="{{asset('img/fotoprofil').'/'.$user->foto}}" alt=""></button></td>
             <td>{{$user->created_at}}</td>
             <td>
               <a href="{{route('admin.profiluser.detail', $user->id)}}" class="btn btn-primary"> LIHAT DETAIL </a>
@@ -63,7 +63,7 @@
 
                 <!-- Modal body -->
                 <div class="modal-body" align="center">
-                  <img class="img" width="1000px" src="{{asset('storage/'  . $user->foto)}}" alt="">
+                  <img class="img" width="1000px" src="{{asset('img/fotoprofil').'/'.$user->foto}}" alt="">
                 </div>
 
                 <!-- Modal footer -->
