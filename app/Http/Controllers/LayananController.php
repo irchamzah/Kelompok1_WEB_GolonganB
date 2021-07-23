@@ -73,7 +73,7 @@ class LayananController extends Controller
 
         //mengubah nama file foto yang diupload
         $fileName=time().'.'.$request->file->extension();
-        $request->file('file')->storeAs('public', $fileName);// nanti buat tempat penyimpanannya menjadi 'public/pesanan'
+        $request->file('file')->move(public_path('img/fotopesanan'), $fileName);
         
         $layanan_detail->file = $fileName;
         $layanan_detail->path = $fileName;
@@ -132,13 +132,13 @@ class LayananController extends Controller
         if(!empty($request->file))
         {
             // menghapus file yang ada di storage
-            if(\File::exists('storage/'.$layanan_detail->file))
+            if(\File::exists(public_path('img/fotopesanan/').$layanan_detail->file))
             {
-                \File::delete('storage/'.$layanan_detail->file);
+                \File::delete(public_path('img/fotopesanan/').$layanan_detail->file);
             }
             //mengubah nama file foto yang diupload
             $fileName=time().'.'.$request->file->extension();
-            $request->file('file')->storeAs('public', $fileName);
+            $request->file('file')->move(public_path('img/fotopesanan'), $fileName);
 
             $layanan_detail->file = $fileName;
         }
@@ -163,8 +163,8 @@ class LayananController extends Controller
         // $hash = new Hashids();
 
         $layanan_detail = LayananDetail::whereId($id)->first();
-        if(\File::exists('storage/'.$layanan_detail->file)){
-            \File::delete('storage/'.$layanan_detail->file);
+        if(\File::exists(public_path('img/fotopesanan/').$layanan_detail->file)){
+            \File::delete(public_path('img/fotopesanan/').$layanan_detail->file);
         }
         LayananDetail::whereId($id)->delete();
         return back()->with('success', 'Hapus data sukses!');

@@ -38,7 +38,7 @@
           <tr>
             <td>{{$index+1}}</td>
             <td>{{$daurulang->nama}}</td>
-            <td><button type="button" class="btn" data-toggle="modal" data-target="#myModal{{$daurulang->id}}"><img src="{{asset('storage/'.$daurulang->foto)}}" alt="" width="200px"></button></td>
+            <td><button type="button" class="btn" data-toggle="modal" data-target="#myModal{{$daurulang->id}}"><img src="{{asset('img/fotokreasi').'/'.$daurulang->foto}}" alt="" width="200px"></button></td>
             <td>{{$daurulang->keterangan}}</td>
             <td>{{$daurulang->keterangan_detail}}</td>
             <td>{{$daurulang->created_at}}</td>
@@ -61,7 +61,7 @@
 
                 <!-- Modal body -->
                 <div class="modal-body" align="center">
-                  <img class="img" width="1000px" src="{{asset('storage/'  . $daurulang->foto)}}" alt="">
+                  <img class="img" width="1000px" src="{{asset('img/fotokreasi').'/'.$daurulang->foto}}" alt="">
                 </div>
 
                 <!-- Modal footer -->

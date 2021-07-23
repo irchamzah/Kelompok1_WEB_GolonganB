@@ -31,7 +31,7 @@
                 <tr>
                   <td width="200">Foto Profil</td>
                   <td width="10">:</td>
-                  <td><button type="button" class="btn" data-toggle="modal" data-target="#myModal{{$user->id}}"><img src="{{asset('storage/'  . $user->foto)}}" alt="" width="200"></button></td>
+                  <td><button type="button" class="btn" data-toggle="modal" data-target="#myModal{{$user->id}}"><img src="{{asset('img/fotoprofil').'/'.$user->foto}}" alt="" width="200"></button></td>
                 </tr>
 
                 <!-- The Modal -->
@@ -47,7 +47,7 @@
 
                       <!-- Modal body -->
                       <div class="modal-body" align="center">
-                      <img class="img" width="1000px" src="{{asset('storage/'  . $user->foto)}}" alt="" >
+                      <img class="img" width="1000px" src="{{asset('img/fotoprofil').'/'.$user->foto}}" alt="" >
                       </div>
 
                       <!-- Modal footer -->

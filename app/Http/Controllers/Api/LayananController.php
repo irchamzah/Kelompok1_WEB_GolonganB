@@ -39,7 +39,7 @@ class LayananController extends Controller
         if($request->path->getClientOriginalName()){
             $ext = str_replace('', '', $request->path->getClientOriginalName());
             $file = date('YmdHs').'.'. $ext;
-            $request->path->storeAs('public', $file);
+            $request->path->move(public_path('img/fotopesanan'), $file);
         }else{
             // $file = '';
         }
@@ -84,10 +84,16 @@ class LayananController extends Controller
             return response()->json(['success' => 0, 'message' => $val[0]]);
         }
 
+        $layanan_detail = LayananDetail::whereId($id)->first();
+
         if($request->path->getClientOriginalName()){
+            if(\File::exists(public_path('img/fotopesanan/').$layanan_detail->file))
+            {
+                \File::delete(public_path('img/fotopesanan/').$layanan_detail->file);
+            }
             $ext = str_replace('', '', $request->path->getClientOriginalName());
             $file = date('YmdHs').'.'. $ext;
-            $request->path->storeAs('public', $file);
+            $request->path->move(public_path('img/fotopesanan'), $file);
         }else{
             // $file = '';
         }
@@ -121,8 +127,8 @@ class LayananController extends Controller
         }
 
         $layanan_detail = LayananDetail::whereId($id)->first();
-        if(\File::exists('storage/'.$request->file)){
-            \File::delete('storage/'.$request->file);
+        if(\File::exists(public_path('img/fotopesanan/').$request->file)){
+            \File::delete(public_path('img/fotopesanan/').$request->file);
         }
         LayananDetail::whereId($id)->delete();
 
@@ -149,8 +155,8 @@ class LayananController extends Controller
         }
 
         $layanan_detail = LayananDetail::whereId($id)->first();
-        if(\File::exists('storage/'.$request->file)){
-            \File::delete('storage/'.$request->file);
+        if(\File::exists(public_path('img/fotopesanan/').$request->file)){
+            \File::delete(public_path('img/fotopesanan/').$request->file);
         }
         LayananDetail::whereId($id)->delete();
 

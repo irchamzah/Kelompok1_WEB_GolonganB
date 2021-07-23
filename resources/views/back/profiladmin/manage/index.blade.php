@@ -41,7 +41,7 @@
             <td>{{$admin->email}}</td>
             <td>{{$admin->alamat}}</td>
             <td>{{$admin->nohp}}</td>
-            <td><button type="button" class="btn" data-toggle="modal" data-target="#myModal{{$admin->id}}"><img src="{{asset('storage/'  . $admin->foto)}}" alt="" width="200"></button></td>
+            <td><button type="button" class="btn" data-toggle="modal" data-target="#myModal{{$admin->id}}"><img src="{{asset('img/fotoprofil').'/'.$admin->foto}}" alt="" width="200"></button></td>
             <td>{{$admin->created_at}}</td>
             <!-- <td>{{$admin->alamat}}</td>
           <td>{{$admin->nohp}}</td> -->
@@ -64,7 +64,7 @@
 
                 <!-- Modal body -->
                 <div class="modal-body" align="center">
-                  <img class="img" width="1000px" src="{{asset('storage/'  . $admin->foto)}}" alt="">
+                  <img class="img" width="1000px" src="{{asset('img/fotoprofil').'/'.$admin->foto}}" alt="">
                 </div>
 
                 <!-- Modal footer -->

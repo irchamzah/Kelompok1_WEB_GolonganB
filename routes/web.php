@@ -25,7 +25,9 @@ use App\Http\Controllers\StatusController;
 |z`
 */
 
-
+// Route::get('/linkstorage', function () {
+//     Artisan::call('storage:link');
+// });
 
 
 Auth::routes();

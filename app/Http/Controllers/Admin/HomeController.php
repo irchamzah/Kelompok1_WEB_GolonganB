@@ -115,8 +115,8 @@ class HomeController extends Controller
     public function destroy($id)
     {
         $layanan_detail = LayananDetail::whereId($id)->first();
-        if(\File::exists('storage/'.$layanan_detail->file)){
-            \File::delete('storage/'.$layanan_detail->file);
+        if(\File::exists(public_path('img/fotopesanan/').$layanan_detail->file)){
+            \File::delete(public_path('img/fotopesanan/').$layanan_detail->file);
         }
         LayananDetail::whereId($id)->delete();
         return back()->with('success', 'Hapus data sukses!');

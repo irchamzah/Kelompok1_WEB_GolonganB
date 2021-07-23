@@ -43,7 +43,7 @@
             <td>{{$layanan_detail->id}}</td>
             <td><a href="{{route('admin.profiluser.detail', $layanan_detail->user->id)}}">{{$layanan_detail->user->name}}</a></td>
             <td>{{$layanan_detail->category->name}}</td>
-            <td><button type="button" class="btn" data-toggle="modal" data-target="#myModal{{$layanan_detail->id}}"><img class="img" width="200px" src="{{asset('storage/'  . $layanan_detail->file)}}" alt=""></button></td>
+            <td><button type="button" class="btn" data-toggle="modal" data-target="#myModal{{$layanan_detail->id}}"><img class="img" width="200px" src="{{asset('img/fotopesanan').'/'.$layanan_detail->file}}" alt=""></button></td>
             <td>{{$layanan_detail->created_at}}</td>
             <td>{{$layanan_detail->tanggaljemput}}</td>
             <td>{{$layanan_detail->keterangan}}</td>
@@ -106,7 +106,7 @@
 
                 <!-- Modal body -->
                 <div class="modal-body" align="center">
-                  <img class="img" width="1000px" src="{{asset('storage/'  . $layanan_detail->file)}}" alt="">
+                  <img class="img" width="1000px" src="{{asset('img/fotopesanan').'/'.$layanan_detail->file}}" alt="">
                 </div>
 
                 <!-- Modal footer -->

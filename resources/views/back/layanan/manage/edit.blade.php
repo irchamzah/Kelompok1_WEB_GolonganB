@@ -17,7 +17,7 @@
       <font>JENIS SAMPAH: {{$layanan_detail->category->name}}</font><br>
       <font>TANGGAL JEMPUT: {{$layanan_detail->tanggaljemput}}</font><br>
       <font>KETERANGAN DARI USER: {{$layanan_detail->keterangan}}</font><br>
-      <p>FOTO SAMPAH YANG DIKIRIM:</p><img class="img" width="1000px" src="{{asset('storage/'  . $layanan_detail->file)}}" alt="">
+      <p>FOTO SAMPAH YANG DIKIRIM:</p><img class="img" width="1000px" src="{{asset('img/fotopesanan').'/'.$layanan_detail->file}}" alt="">
 
       @if ($layanan_detail->status_id == 1)
 
