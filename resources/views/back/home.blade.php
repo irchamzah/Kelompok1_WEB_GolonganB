@@ -41,7 +41,7 @@
           <tr>
             <td>{{$index+1}}</td>
             <td>{{$layanan_detail->id}}</td>
-            <td><a href="{{route('admin.profiluser.detail', $layanan_detail->user->id)}}">{{$layanan_detail->user->name}}</a></td>
+            <td><a href="{{route('admin.profiluser.detail', $layanan_detail->User->id)}}">{{$layanan_detail->User->name}}</a></td>
             <td>{{$layanan_detail->category->name}}</td>
             <td><button type="button" class="btn" data-toggle="modal" data-target="#myModal{{$layanan_detail->id}}"><img class="img" width="200px" src="{{asset('img/fotopesanan').'/'.$layanan_detail->file}}" alt=""></button></td>
             <td>{{$layanan_detail->created_at}}</td>
