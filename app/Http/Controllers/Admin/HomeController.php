@@ -9,6 +9,7 @@ use App\Models\Category;
 use App\Models\Layanan;
 use App\Models\Notifikasi;
 use App\Models\Admin;
+use App\Models\User;
 use App\Models\LayananDetail;
 
 class HomeController extends Controller

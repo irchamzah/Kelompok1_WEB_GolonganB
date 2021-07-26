@@ -24,17 +24,17 @@ class LayananDetail extends Model
 
     public function layanan()
     {
-        return $this->belongsTo('App\Models\layanan', 'layanan_id', 'id');
+        return $this->belongsTo('App\Models\Layanan', 'layanan_id', 'id');
     }
     
     public function category()
     {
-        return $this->belongsTo('App\Models\category', 'category_id', 'id');
+        return $this->belongsTo('App\Models\Category', 'category_id', 'id');
     }
 
     public function user()
     {
-        return $this->belongsTo('App\Models\user', 'user_id', 'id');
+        return $this->belongsTo('App\Models\User', 'user_id', 'id');
     }
 
     public function notifikasi()
